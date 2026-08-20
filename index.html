@@ -112,7 +112,7 @@
     </style>
 </head>
 
-<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-terracotta selection:text-white pb-20 lg:pb-0">
+<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-terracotta selection:text-white pb-24 lg:pb-0">
 
     <!-- Top Navigation Bar -->
     <header class="sticky top-0 z-40 bg-stone-100/95 backdrop-blur-md border-b border-stone-200">
@@ -131,13 +131,12 @@
                 <!-- Desktop Nav Links -->
                 <nav class="hidden lg:flex space-x-4 text-xs font-semibold uppercase tracking-wider text-stone-600">
                     <a href="#overview" class="hover:text-terracotta transition-colors">Tổng Quan</a>
-                    <a href="#route-map" class="hover:text-terracotta transition-colors">Sơ Đồ Di Chuyển</a>
+                    <a href="#itinerary" class="hover:text-terracotta transition-colors">Sơ Đồ & Lịch Trình</a>
+                    <a href="#destinations" class="hover:text-terracotta transition-colors">Địa Điểm & Ẩm Thực</a>
+                    <a href="#budget" class="hover:text-terracotta transition-colors">Ngân Sách</a>
                     <a href="#community-guide" class="hover:text-terracotta transition-colors">Lưu Ý Cộng Đồng</a>
                     <a href="#social" class="hover:text-terracotta transition-colors">Đánh Giá MXH</a>
                     <a href="#transport" class="hover:text-terracotta transition-colors">Xe Cabin Đôi</a>
-                    <a href="#itinerary" class="hover:text-terracotta transition-colors">Lịch Trình Tối Ưu</a>
-                    <a href="#destinations" class="hover:text-terracotta transition-colors">Địa Điểm & Ẩm Thực</a>
-                    <a href="#budget" class="hover:text-terracotta transition-colors">Ngân Sách</a>
                     <a href="#safety" class="hover:text-terracotta transition-colors">An Toàn & Khí Hậu</a>
                 </nav>
 
@@ -154,7 +153,7 @@
     <!-- Main Content Container -->
     <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-8 sm:space-y-12">
 
-        <!-- Hero Section -->
+        <!-- 1. Hero / Overview Section -->
         <section id="overview" class="bg-gradient-to-br from-slate-900 via-slate-800 to-stone-900 rounded-2xl sm:rounded-3xl p-4 sm:p-8 text-white shadow-xl relative overflow-hidden">
             <div class="relative z-10 space-y-3 sm:space-y-4">
                 <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-800/90 border border-stone-700 text-amber-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider">
@@ -193,740 +192,14 @@
             </div>
         </section>
 
-        <!-- Master Community Guide Matrix -->
-        <section id="community-guide" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5 sm:space-y-6">
-            <div class="border-b border-stone-200 pb-3 sm:pb-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                        <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
-                            <i class="fa-solid fa-book-bookmark text-terracotta"></i> 
-                            Cẩm Nang Tất Tần Tật: Lưu Ý Quan Trọng Từ Cộng Đồng Phượt
-                        </h2>
-                        <p class="text-stone-600 text-xs sm:text-sm mt-1">
-                            Tổng hợp bài học "xương máu" từ các hội nhóm Hà Giang Loop: kỹ năng lái xe, thủ tục kiểm tra, ứng xử văn hóa & xử lý tình huống khẩn cấp.
-                        </p>
-                    </div>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 self-start sm:self-auto">
-                        <i class="fa-solid fa-triangle-exclamation"></i> Bắt Bắt Phải Đọc
-                    </span>
-                </div>
-            </div>
-
-            <!-- Category Switcher Tabs -->
-            <div class="flex overflow-x-auto no-scrollbar gap-2 text-xs font-semibold pb-1">
-                <button onclick="switchGuideTab('bike')" id="gtab-bike" class="guide-tab guide-tab-active px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-solid fa-motorcycle mr-1.5 text-amber-400"></i> Lái Xe & Đổ Đèo
-                </button>
-                <button onclick="switchGuideTab('culture')" id="gtab-culture" class="guide-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-solid fa-people-group mr-1.5 text-moss"></i> Văn Hóa & Trẻ Em
-                </button>
-                <button onclick="switchGuideTab('docs')" id="gtab-docs" class="guide-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-solid fa-id-card mr-1.5 text-terracotta"></i> Giấy Tờ & CSGT
-                </button>
-                <button onclick="switchGuideTab('signal')" id="gtab-signal" class="guide-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-solid fa-wifi mr-1.5 text-skyblue"></i> Sóng & Tiền Mặt
-                </button>
-                <button onclick="switchGuideTab('health')" id="gtab-health" class="guide-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-solid fa-kit-medical mr-1.5 text-rose-500"></i> Sức Khỏe & Thuốc
-                </button>
-            </div>
-
-            <!-- Guide Tab Contents -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                
-                <!-- Left Details Content (8 cols) -->
-                <div class="lg:col-span-8 space-y-4">
-                    <!-- Tab 1: Bike & Driving -->
-                    <div id="gcontent-bike" class="guide-content-panel space-y-3">
-                        <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl space-y-2">
-                            <h3 class="font-bold text-amber-900 text-xs sm:text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-circle-exclamation text-amber-600"></i> Quy Tắc Vàng Khi Đổ Đèo (Mã Pí Lèng, Dốc Bắc Sum, Thẩm Mã)
-                            </h3>
-                            <ul class="list-disc pl-5 text-xs text-amber-950 space-y-1.5 leading-relaxed">
-                                <li><strong>Nguyên tắc "Lên số nào – Xuống số đó":</strong> Khi đổ dốc nguy hiểm, tuyệt đối gài <strong>Số 1 hoặc Số 2</strong> để phanh bằng động cơ (Engine Braking). Giúp xe tự ghìm tốc độ an toàn.</li>
-                                <li><strong>KHÔNG rà phanh liên tục:</strong> Rà phanh đĩa/cơ liên tục làm nóng cháy má phanh, sôi dầu phanh dẫn đến MẤT PHANH đột ngột. Chỉ nhấp nhả phanh ngắt quãng.</li>
-                                <li><strong>Tuyệt đối KHÔNG gạt số 0 (Mo) hoặc bóp côn thả trôi:</strong> Xe mất lực ghìm sẽ trôi dốc tự do cực kỳ nguy hiểm.</li>
-                                <li><strong>Bóp còi tại các góc cua mù:</strong> Cua tay áo dốc núi thường bị khuất tầm nhìn bởi vách đá. Hãy bóp còi ngắn 2-3 tiếng báo hiệu cho xe ngược chiều.</li>
-                                <li><strong>Không chạy xe sau 18:00 tối:</strong> Đèo Hà Giang không có đèn đường, sương mù buông dày đặc làm tầm nhìn giảm xuống dưới 3m. Hãy về điểm nghỉ trước khi trời tối!</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Tab 2: Culture & Kids -->
-                    <div id="gcontent-culture" class="guide-content-panel hidden space-y-3">
-                        <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl space-y-2">
-                            <h3 class="font-bold text-emerald-900 text-xs sm:text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-heart text-emerald-600"></i> Ứng Xử Văn Hóa & Lời Khuyên Về Trẻ Em Vùng Cao
-                            </h3>
-                            <ul class="list-disc pl-5 text-xs text-emerald-950 space-y-1.5 leading-relaxed">
-                                <li><strong>KHÔNG CHO TIỀN TRẺ EM VEN ĐƯỜNG:</strong> Cộng đồng du lịch uy tín kêu gọi tuyệt đối không cho tiền lẻ cho em bé đứng xin dọc đường đèo. Việc này tạo thói quen bỏ học đứng vẫy xe xin tiền. Thay vào đó, hãy tặng bánh kẹo nhỏ hoặc sách vở tại trường học.</li>
-                                <li><strong>Chụp ảnh với em bé đeo gùi hoa:</strong> Tại dốc Thẩm Mã, bến thuyền Nho Quế hay Lũng Cú có các bé dân tộc đeo gùi hoa chụp ảnh. Nếu chụp cùng, hãy gửi các em 10.000₫ – 20.000₫ hoặc bánh kẹo như một lời cảm ơn chu đáo.</li>
-                                <li><strong>Tôn trọng nhà trình tường & Phong tục:</strong> Không xoa đầu trẻ em dân tộc, không chỉ tay thẳng vào bàn thờ tổ tiên khi tham quan nhà cổ người H'Mông / Lô Lô. Hãy hỏi ý kiến trước khi chụp ảnh người già hoặc phụ nữ trong bản.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Tab 3: Docs & Police -->
-                    <div id="gcontent-docs" class="guide-content-panel hidden space-y-3">
-                        <div class="bg-sky-50 border border-sky-200 p-4 rounded-xl space-y-2">
-                            <h3 class="font-bold text-sky-900 text-xs sm:text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-shield-cat text-sky-600"></i> Giấy Tờ Bắt Buộc & Lưu Ý CSGT Hà Giang
-                            </h3>
-                            <ul class="list-disc pl-5 text-xs text-sky-950 space-y-1.5 leading-relaxed">
-                                <li><strong>Giấy tờ cá nhân:</strong> CCCD/Hộ chiếu gốc (bắt buộc để nhận phòng homestay và kiểm tra biên giới). Bằng lái xe A1/A2 còn hạn (chủ xe máy sẽ giữ hoặc đối chiếu).</li>
-                                <li><strong>Giấy phép vùng biên giới (Đối với người nước ngoài):</strong> Khách nước ngoài đi cùng bắt buộc phải mua "Permit" (230.000₫/người) tại Phòng Quản lý XNC Công an Tỉnh Hà Giang hoặc nhờ nhà xe/homestay làm giúp.</li>
-                                <li><strong>Chốt CSGT kiểm tra:</strong> Các chốt CSGT thường làm việc tại lối ra TP Hà Giang, khu vực Tráng Kìm và lối vào thị trấn Đồng Văn. Kiểm tra nghiêm ngặt: Bằng lái xe, bảo hiểm TNDS, nồng độ cồn (0%) và gương chiếu hậu. Tuyệt đối KHÔNG uống rượu ngô rồi lái xe!</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Tab 4: Signal & Cash -->
-                    <div id="gcontent-signal" class="guide-content-panel hidden space-y-3">
-                        <div class="bg-slate-100 border border-slate-300 p-4 rounded-xl space-y-2">
-                            <h3 class="font-bold text-slate-800 text-xs sm:text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-credit-card text-slate-600"></i> Sóng Di Động & Chuẩn Bị Tiền Mặt
-                            </h3>
-                            <ul class="list-disc pl-5 text-xs text-slate-800 space-y-1.5 leading-relaxed">
-                                <li><strong>Sóng điện thoại:</strong> SIM <strong>Viettel</strong> có độ phủ sóng mạnh nhất và ổn định nhất trên toàn cõi Hà Giang (kể cả trong đại vực Nho Quế & hẻm Tu Sản). SIM Vinaphone/Mobifone có thể mất sóng tại các đoạn đèo hẻm núi.</li>
-                                <li><strong>Tiền mặt là "Vua":</strong> Chuẩn bị từ 2.000.000₫ – 3.000.000₫ tiền mặt (mệnh giá 20k, 50k, 100k, 200k). Nhiều quán nước ven đường, bến thuyền Nho Quế, điểm gửi xe hoặc homestay vùng sâu KHÔNG có máy quẹt thẻ hoặc internet chập chờn không chuyển khoản được.</li>
-                                <li><strong>Cây ATM:</strong> Cây ATM chỉ tập trung ở TP Hà Giang, Yên Minh, Đồng Văn và Mèo Vạc. Tránh phụ thuộc hoàn toàn vào chuyển khoản.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Tab 5: Health & Pharmacy -->
-                    <div id="gcontent-health" class="guide-content-panel hidden space-y-3">
-                        <div class="bg-rose-50 border border-rose-200 p-4 rounded-xl space-y-2">
-                            <h3 class="font-bold text-rose-900 text-xs sm:text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-pills text-rose-600"></i> Sức Khỏe & Tủ Thuốc Cá Nhân Vùng Cao
-                            </h3>
-                            <ul class="list-disc pl-5 text-xs text-rose-950 space-y-1.5 leading-relaxed">
-                                <li><strong>Thuốc tiêu hóa & Men vi sinh:</strong> Ẩm thực vùng cao có nhiều món lạ (lẩu thắng cố, ấu tẩu, lợn quay nhiều mỡ). Mang theo Berberin hoặc Smecta phòng trường hợp đau bụng.</li>
-                                <li><strong>Chống say xe & Đau đầu:</strong> Cung đường dốc cua liên tục 150km/ngày dễ gây chóng mặt, tiền đình. Uống thuốc say xe trước 30 phút xuất phát.</li>
-                                <li><strong>Dụng cụ sơ cứu cơ bản:</strong> Băng cá nhân, gạc y tế, Povidone sát trùng, dầu gió, cao dán Salonpas xoa bóp cơ tay sau ngày lái xe dài.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side: Interactive Motorbike Inspector & Hotline Card (4 cols) -->
-                <div class="lg:col-span-4 space-y-4">
-                    <!-- Interactive Motorbike Check List Card -->
-                    <div class="bg-stone-100 p-4 rounded-2xl border border-stone-200 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                                <i class="fa-solid fa-list-check text-terracotta"></i> Checklist Thuê Xe Máy
-                            </h3>
-                            <span id="bikeCheckStatus" class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">0/5 Đã kiểm</span>
-                        </div>
-                        <p class="text-[11px] text-stone-600">
-                            Tích chọn kiểm tra trực tiếp khi nhận xe tại TP Hà Giang trước khi lên đèo:
-                        </p>
-                        <div id="bikeChecklist" class="space-y-2 text-xs text-stone-700">
-                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-stone-200 hover:border-terracotta transition-all">
-                                <input type="checkbox" onchange="updateBikeCheck()" class="w-4 h-4 text-terracotta rounded border-stone-300">
-                                <span>Phanh trước & phanh sau ăn nhạy</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-stone-200 hover:border-terracotta transition-all">
-                                <input type="checkbox" onchange="updateBikeCheck()" class="w-4 h-4 text-terracotta rounded border-stone-300">
-                                <span>Lốp xe rãnh sâu, không trọc mòn</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-stone-200 hover:border-terracotta transition-all">
-                                <input type="checkbox" onchange="updateBikeCheck()" class="w-4 h-4 text-terracotta rounded border-stone-300">
-                                <span>Đèn pha, đèn xi-nhan & còi tốt</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-stone-200 hover:border-terracotta transition-all">
-                                <input type="checkbox" onchange="updateBikeCheck()" class="w-4 h-4 text-terracotta rounded border-stone-300">
-                                <span>Đủ 2 gương chiếu hậu rõ nét</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer bg-white p-2 rounded-lg border border-stone-200 hover:border-terracotta transition-all">
-                                <input type="checkbox" onchange="updateBikeCheck()" class="w-4 h-4 text-terracotta rounded border-stone-300">
-                                <span>Lưu SĐT cứu hộ của chủ xe</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Emergency Hotline Card -->
-                    <div class="bg-slate-900 text-white p-4 rounded-2xl space-y-2 text-xs">
-                        <div class="font-bold text-amber-400 text-xs flex items-center gap-2">
-                            <i class="fa-solid fa-phone-volume"></i> Hotline Cứu Hộ & Hỗ Trợ Khẩn Cấp
-                        </div>
-                        <div class="space-y-1.5 text-[11px] text-stone-300">
-                            <p><strong class="text-white">Cứu hộ xe máy TP Hà Giang:</strong> <a href="tel:0986846110" class="text-amber-300 underline">0986.846.110</a></p>
-                            <p><strong class="text-white">Cứu hộ khu vực Đồng Văn / Mèo Vạc:</strong> <a href="tel:0912060335" class="text-amber-300 underline">0912.060.335</a></p>
-                            <p><strong class="text-white">Bệnh viện Đa khoa Tỉnh Hà Giang:</strong> <a href="tel:02193866421" class="text-amber-300 underline">0219.3866.421</a></p>
-                            <p><strong class="text-white">Cảnh sát Giao thông Hà Giang:</strong> <a href="tel:02193869142" class="text-amber-300 underline">0219.3869.142</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 1: Youth Trends & Social Media Real Reviews vs Marketing Seeding -->
-        <section id="social" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5 sm:space-y-6">
-            <div class="border-b border-stone-200 pb-3 sm:pb-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                        <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
-                            <i class="fa-solid fa-hashtag text-terracotta"></i> 
-                            Đánh Giá Chân Thật Từ Giới Trẻ vs Bóc Trần Quảng Cáo Marketing
-                        </h2>
-                        <p class="text-stone-600 text-xs sm:text-sm mt-1">
-                            Lọc sạch bài seeding quảng cáo tour – Chỉ lấy phản hồi thực tế từ phượt thủ tự túc trên Threads, TikTok & FB Groups.
-                        </p>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800 self-start sm:self-auto">
-                        <i class="fa-solid fa-filter"></i> Lọc Sạch Seeding
-                    </span>
-                </div>
-            </div>
-
-            <!-- Marketing vs Reality Comparison Banner -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div class="bg-rose-50 border border-rose-200 p-4 rounded-xl space-y-2">
-                    <h3 class="font-bold text-rose-900 text-sm flex items-center gap-2">
-                        <i class="fa-solid fa-rectangle-ad text-rose-600"></i> Lời Đồn Quảng Cáo / Seeding (Cần Cảnh Giác)
-                    </h3>
-                    <ul class="list-disc pl-4 text-rose-950 space-y-1 text-[11px] leading-relaxed">
-                        <li><strong>"Đi Hà Giang nhẹ nhàng lắm, tự lái 2 người quá khỏe":</strong> Thực tế lái xe máy 150km đèo dốc/ngày làm rát tay, mỏi vai ê mông khủng hoảng nếu không quen chạy xe đường trường.</li>
-                        <li><strong>"Xuống bến thuyền Nho Quế đi bộ 10 phút":</strong> Đường dốc thẳng đứng, đi xe ôm 2 chiều (150k) sốc tim. Mùa cao điểm chờ thuyền 1-2 tiếng ngột ngạt dưới cái nắng gắt.</li>
-                        <li><strong>"Sáng đặt homestay chiều tới ở Lô Lô Chải":</strong> Lô Lô Chải cực kỳ ít phòng! Nếu không book trước 2-3 tuần, bạn sẽ bị bơ vơ giữa bản biên giới buổi tối.</li>
-                    </ul>
-                </div>
-
-                <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl space-y-2">
-                    <h3 class="font-bold text-emerald-900 text-sm flex items-center gap-2">
-                        <i class="fa-solid fa-check-double text-emerald-600"></i> Thực Tế Trải Nghiệm "Khuyên Thật" Từ Threads
-                    </h3>
-                    <ul class="list-disc pl-4 text-emerald-950 space-y-1 text-[11px] leading-relaxed">
-                        <li><strong>Đi cặp đôi nếu tay lái yếu:</strong> Nên cân nhắc book 2 bạn Easy Rider (tài xế chở) hoặc ghép 1 tự lái + 1 Easy Rider để giữ sức chill, ngắm cảnh và chụp ảnh.</li>
-                        <li><strong>Xe Cabin Đôi:</strong> Chọn cabin tầng dưới (tầng 1) ít bồng bềnh hơn tầng 2. Xin ngủ lại trên xe tại bến đến 6h30 sáng để vừa đủ giấc vừa không tốn tiền phòng.</li>
-                        <li><strong>Thức ăn:</strong> Lẩu gà đen và bánh cuốn chan cực kỳ hợp vị. Thắng cố có mùi khá nồng, nếu bụng yếu hoặc không quen mùi nên cân nhắc kỹ trước khi gọi.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Platform Switcher Tabs -->
-            <div class="flex overflow-x-auto no-scrollbar gap-2 text-xs font-semibold pb-1">
-                <button onclick="switchSocialTab('threads')" id="stab-threads" class="social-tab social-tab-active px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-brands fa-threads mr-1.5"></i> Threads (Tâm Sự Thật 100%)
-                </button>
-                <button onclick="switchSocialTab('tiktok')" id="stab-tiktok" class="social-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-brands fa-tiktok mr-1.5"></i> TikTok (Mẹo Chụp Ảnh & Video)
-                </button>
-                <button onclick="switchSocialTab('fb')" id="stab-fb" class="social-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3.5 py-2 rounded-xl border border-stone-200 whitespace-nowrap transition-all flex items-center">
-                    <i class="fa-brands fa-facebook mr-1.5"></i> FB Phượt Groups
-                </button>
-            </div>
-
-            <!-- Social Content Area -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-                <!-- Chart Col (5 cols) -->
-                <div class="lg:col-span-5 space-y-2.5">
-                    <h3 class="font-bold text-stone-800 text-xs uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-chart-column text-terracotta"></i> Chỉ Số Thỏa Mãn Thực Tế Từ Khách Du Lịch
-                    </h3>
-                    <div class="chart-container">
-                        <canvas id="socialSentimentChart"></canvas>
-                    </div>
-                    <p class="text-[11px] text-stone-500 text-center italic">
-                        Khảo sát từ 1.200+ bài review phượt tự túc không chứa mã giảm giá hay seeding.
-                    </p>
-                </div>
-
-                <!-- Reviews Feed Col (7 cols) -->
-                <div class="lg:col-span-7">
-                    <!-- Threads View -->
-                    <div id="scontent-threads" class="social-content-panel grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[580px] overflow-y-auto pr-1.5 custom-scrollbar">
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @minh_ha_traveler</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Tự Lái vs Easy</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Nói thật, đi 3N2Đ tự đèo nhau 150km/ngày mỏi rát đùi lắm. Bọn mình chọn 1 Easy Rider chở bạn nữ, mình tự lái xe số đi theo. Vừa an toàn vừa tha hồ chụp ảnh!"
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @linh_linh98</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Lô Lô Chải</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Đừng tin mấy bên bảo 'đến Lô Lô Chải mới tìm phòng'! Bản ít homestay lắm, mùa cao điểm kín trước cả tháng. Đặt trước phòng nện đất đêm 18°C chill cực."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @hoang_phuot_2k</span>
-                                <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">Sông Nho Quế</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Đi Nho Quế khuyên mua trọn gói xe ôm 2 chiều xuống bến (150k). Đừng dại đi bộ đường dốc đứng, mệt rã rời không còn sức sống ảo."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @mai_anh_02</span>
-                                <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-1.5 py-0.5 rounded">Mẹo Yên Xe</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Mẹo xương máu: Mua bọc đệm yên xe bằng kim cương/gel bọc ngoài trước khi đi. Ngồi xe 6-8 tiếng/ngày bớt ê mông rõ rệt."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @trang_mup</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Lẩu Gà Đen</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Ăn lẩu gà đen CND Đồng Văn cực ngon nhưng phải gọi đặt bàn trước lúc 17h. Cuối tuần khách đông đứng chờ cả tiếng đồng hồ mệt mỏi."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @duc_anh_88</span>
-                                <span class="text-[10px] bg-rose-100 text-rose-800 font-bold px-1.5 py-0.5 rounded">Xe Cabin VIP</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Đặt xe Cabin Đôi nhớ xin nhà xe xếp Cabin tầng 1 (tầng dưới). Xe lắc đèo tầng 2 bồng bềnh hơn dễ bị say xe."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @ngoc_han_travel</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Bánh Cuốn</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Bánh cuốn chan nước xương Bà Hà Đồng Văn ngon xuất sắc. Nên dậy ăn tầm 6h30 - 7h00 sáng, muộn hơn là hết chả lòng đào."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @viet_hung_99</span>
-                                <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">An Toàn Lái Xe</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Tuyệt đối không vừa lái xe vừa cầm điện thoại quay TikTok đoạn cua M hay Mã Pí Lèng. Đường hẹp, xe tải cua gấp nguy hiểm!"
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @quynh_chi_97</span>
-                                <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-1.5 py-0.5 rounded">Cháo Ấu Tẩu</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Cháo ấu tẩu Mộc Miên đêm phố cổ miếng đầu hơi đắng nhẹ, nuốt xuống bùi béo ngọt hậu. Ăn xong về phòng ngủ một mạch đến sáng."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @nam_khanh_vlog</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Sóng Mạng</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "SIM Viettel vô đối trên Hà Giang. Xuống hẻm Tu Sản hay vào Lô Lô Chải SIM Mobi/Vina tịt sóng không quẹt QR được đâu."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @bich_phuong_95</span>
-                                <span class="text-[10px] bg-rose-100 text-rose-800 font-bold px-1.5 py-0.5 rounded">Trang Phục</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Cuối tháng 8 ban ngày nắng đẹp nhưng đêm ở Lô Lô Chải lạnh 18°C. Nhớ mang theo áo khoác cardigan/áo gió mỏng nhé!"
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-solid fa-at text-slate-800 mr-1"></i> @duy_tan_96</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Thời Gian Trip</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Đừng tin bảo 'Hà Giang 2 ngày là đủ'. 3N2Đ là vừa vặn nhất cho người làm văn phòng đi cuối tuần, không quá vội."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- TikTok View -->
-                    <div id="scontent-tiktok" class="social-content-panel hidden grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[580px] overflow-y-auto pr-1.5 custom-scrollbar">
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @ha_giang_trip • 210K views</span>
-                                <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">Sông Nho Quế</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Chèo thuyền Nho Quế nên chọn khung giờ 13:30 - 15:00. Lúc này nắng chiếu qua khe hẻm Tu Sản nước ngọc bích sáng rực nhất!"
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @trainghiemhagiang • 142K views</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Cafe Mí Pó</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Đừng ra mỏm đá sống ảo nguy hiểm nữa! Ghé Cafe Mí Pó vách đèo Mã Pí Lèng vừa uống cafe vừa chụp trọn góc sông Nho Quế."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @review_hagiang_0d • 98K views</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Dốc Thẩm Mã</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Dốc Thẩm Mã tầm 10h sáng xe tour cực đông. Chạy sớm tầm 8h sáng tới nơi vắng vẻ tha hồ đứng góc đỉnh dốc quay clip."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @phuot_cung_ban • 185K views</span>
-                                <span class="text-[10px] bg-rose-100 text-rose-800 font-bold px-1.5 py-0.5 rounded">Lái Đèo Tối</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Cảnh báo: Tuyệt đối không chạy xe sau 18h tối trên đèo. Sương mù mù tịt tầm nhìn dưới 2m cực kỳ nguy hiểm!"
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @checkin_vungcao • 115K views</span>
-                                <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-1.5 py-0.5 rounded">Thổ Cẩm Lô Lô</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Thuê bộ trang phục dân tộc Lô Lô Chải 50k - 70k mặc đi dạo quanh bản gạch đá cổ nện đất siêu xinh lên ảnh triệu view."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @foodie_hagiang • 88K views</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Thắng Cố</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Thắng cố chợ phiên có mùi hơi ngái đặc trưng. Bạn nào bụng yếu khuyên ăn Lẩu gà đen hoặc Thịt lợn bản nướng mắc mật safe hơn."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @meo_chup_anh • 230K views</span>
-                                <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">Phố Cổ Đêm</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Buổi tối ở Phố cổ Đồng Văn bật flash chụp góc trước quán cafe rực rỡ đèn lồng vàng đen trông cực nghệ như Hội An thu nhỏ."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @di_va_trai_nghiem • 76K views</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Đổ Xăng</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Kinh nghiệm đổ xăng: Cứ thấy cây xăng lớn ở Tam Sơn, Yên Minh, Đồng Văn là đổ đầy bình ngay. Đừng đợi vạch đỏ giữa đèo!"
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @travel_with_me • 160K views</span>
-                                <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-1.5 py-0.5 rounded">Dinh Vua Mèo</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Vào Dinh Vua Mèo nhớ thuê chị thuyết minh viên địa phương (100k/đoàn) nghe giải thích kiến trúc đá xanh & lịch sử mới thấy hay."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @goc_xanh_hagiang • 105K views</span>
-                                <span class="text-[10px] bg-rose-100 text-rose-800 font-bold px-1.5 py-0.5 rounded">Cột Cờ Lũng Cú</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Cột cờ Lũng Cú mua vé xe điện 15k lên thẳng chốt dốc đỡ mỏi chân leo 800 bậc đá, dành sức lên đỉnh chụp với lá cờ 54m2."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @phuot_xe_may • 140K views</span>
-                                <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">Đường Cua M</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Đoạn đường M Mèo Vạc uốn lượn siêu đẹp! Dừng xe ở khúc mỏm cao ngắm trọn dải đường uốn như chữ M huyền thoại."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-tiktok text-black mr-1"></i> @local_guide_hg • 190K views</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Ứng Xử Trẻ Em</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Lời khuyên văn minh: Đừng cho tiền lẻ trẻ em vẫy xe dọc đường đèo. Tặng bánh kẹo nhỏ hoặc sách vở để em đến trường."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- FB Groups View -->
-                    <div id="scontent-fb" class="social-content-panel hidden grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[580px] overflow-y-auto pr-1.5 custom-scrollbar">
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Nhóm Phượt Hà Giang</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Đổ Đèo</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Kỹ thuật đổ đèo Mã Pí Lèng & Bắc Sum: Luôn cài số 1 hoặc số 2 hãm phanh bằng động cơ. Tuyệt đối KHÔNG gạt số 0 (mo) rà phanh."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Hội Du Lịch Hà Giang</span>
-                                <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">Chốt CSGT</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Chốt CSGT Tráng Kìm & Đồng Văn kiểm tra nghiêm: Bằng lái xe A1, gương chiếu hậu, bảo hiểm TNDS và cồn (0%). Tuyệt đối không uống rượu!"
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Góc Phượt Vùng Cao</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Chọn Xe Máy</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Thuê xe máy nên ưu tiên xe số Sirius / Blade 110cc động cơ khỏe. Tránh thuê xe ga yếu lốp mòn leo dốc Thẩm Mã rất ỳ."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Review Hà Giang A-Z</span>
-                                <span class="text-[10px] bg-rose-100 text-rose-800 font-bold px-1.5 py-0.5 rounded">Giấy Phép Vùng Biên</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Lưu ý nếu đi cùng bạn bè nước ngoài: Bắt buộc mua Permit (230.000₫/người) tại Phòng Quản lý XNC Công an Tỉnh Hà Giang."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Chia Sẻ Kinh Nghiệm</span>
-                                <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-1.5 py-0.5 rounded">Tiền Mặt</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Mang sẵn 2.000.000₫ - 3.000.000₫ tiền mặt lẻ (20k, 50k, 100k). Nhiều bến đò, điểm gửi xe hoặc quán nước không có mạng banking."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Cộng Đồng Phượt Việt</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Cứu Hộ</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Lưu ngay hotline cứu hộ xe máy địa phương khi lấy xe ở TP Hà Giang. Trường hợp thủng lốp giữa đèo họ có đội vá lưu động."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Kinh Nghiệm Phượt Bắc Bộ</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Vòng Lặp Chuẩn</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Tuyến chuẩn 3N2Đ: TP Hà Giang → Quản Bạ → Yên Minh → Lô Lô Chải → Đồng Văn → Mã Pí Lèng → Mèo Vạc → Lùng Tám → TP Hà Giang."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Dân Phượt Việt Nam</span>
-                                <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">Trạm Trung Chuyển</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Chiều ngày 3 quay về TP Hà Giang tầm 16h30, tận dụng phòng tắm nóng miễn phí tại trạm trung chuyển nhà xe gột rửa bụi bẩn."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Hội Review Homestay</span>
-                                <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-1.5 py-0.5 rounded">So Sánh Lưu Trú</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Phân bổ đêm hợp lý: Đêm 1 ngủ Lô Lô Chải đón không khí yên tĩnh Cực Bắc; Đêm 2 ngủ Phố cổ Đồng Văn nhộn nhịp sầm uất."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Xe Cabin VIP Hà Nội</span>
-                                <span class="text-[10px] bg-rose-100 text-rose-800 font-bold px-1.5 py-0.5 rounded">Ngủ Lại Trên Xe</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Xe cabin đêm tới Bến xe Hà Giang tầm 3h30 sáng, nhà xe cho ngủ tiếp trên xe tới 6h30 miễn phí, đỡ tốn tiền thuê phòng giờ đầu."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Thời Tiết & Đường Đèo</span>
-                                <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Áo Mưa Bộ</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Thời tiết núi cao cuối tháng 8 hay có mưa rào bất chợt. Chuẩn bị sẵn bộ áo mưa vải dù 2 mảnh, không dùng áo mưa tiện lợi dễ rách."
-                            </p>
-                        </div>
-
-                        <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1 text-xs">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-slate-800"><i class="fa-brands fa-facebook text-blue-600 mr-1"></i> Ẩm Thực Vùng Cao</span>
-                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Đặc Sản</span>
-                            </div>
-                            <p class="text-stone-700 leading-relaxed text-[11px]">
-                                "Bánh cuốn Đồng Văn chấm nước dùng hầm xương ngọt thanh ăn kèm chả lụa thơm phức. Khác hẳn kiểu chấm nước mắm chua ngọt ở Hà Nội."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Transport Hub (Xe Cabin Đôi VIP) -->
-        <section id="transport" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5 sm:space-y-6">
-            <div class="border-b border-stone-200 pb-3 sm:pb-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
-                        <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
-                            <i class="fa-solid fa-bus text-terracotta"></i> 
-                            Hệ Thống Xe Cabin Đôi VIP Hà Nội – Hà Giang
-                        </h2>
-                        <p class="text-stone-600 text-xs sm:text-sm mt-1">
-                            So sánh các nhà xe uy tín có buồng cabin giường đôi riêng tư cho 2 người, trang bị rèm che, điều hòa và cổng sạc.
-                        </p>
-                    </div>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 self-start sm:self-auto">
-                        <i class="fa-solid fa-shield-halved"></i> 550.000₫ / cabin đôi / chiều
-                    </span>
-                </div>
-            </div>
-
-            <!-- Bus Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                <!-- Bus 1 -->
-                <div class="border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-terracotta transition-all bg-stone-50/60 space-y-3 flex flex-col justify-between">
-                    <div class="space-y-2.5">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-bold text-sm sm:text-base text-slate-800">Nhà Xe Bằng Phấn</h3>
-                                <p class="text-[11px] sm:text-xs text-stone-500">Cung Điện VIP 22 Cabin Đôi • Đánh giá 4.9/5★</p>
-                            </div>
-                            <span class="bg-amber-100 text-amber-800 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded">Hàng Đầu</span>
-                        </div>
-                        <div class="space-y-1 text-xs text-stone-700 border-t border-stone-200 pt-2.5">
-                            <p><strong class="text-slate-900"><i class="fa-regular fa-clock mr-1 text-terracotta"></i>Giờ chạy HN:</strong> 20:30, 21:00, 22:30 (Khuyên chọn 21:00)</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-location-dot mr-1 text-terracotta"></i>Điểm đón HN:</strong> Bx Mỹ Đình, 156 Trần Quang Khải, Nội Bài</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-bed mr-1 text-terracotta"></i>Đặc quyền:</strong> Ngủ lại trên xe miễn phí tại Bx Hà Giang tới 07:30 sáng.</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center text-xs border-t border-stone-200 pt-2.5">
-                        <span class="font-extrabold text-terracotta text-sm">550.000 VNĐ / Cabin</span>
-                        <span class="text-[11px] text-stone-500"><i class="fa-solid fa-wifi"></i> Wifi • Sạc USB</span>
-                    </div>
-                </div>
-
-                <!-- Bus 2 -->
-                <div class="border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-terracotta transition-all bg-stone-50/60 space-y-3 flex flex-col justify-between">
-                    <div class="space-y-2.5">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-bold text-sm sm:text-base text-slate-800">Nhà Xe Quang Tuyến</h3>
-                                <p class="text-[11px] sm:text-xs text-stone-500">Chuyên Tuyến Cabin VIP Hà Giang • 4.8/5★</p>
-                            </div>
-                            <span class="bg-stone-200 text-stone-700 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded">Cực Uy Tín</span>
-                        </div>
-                        <div class="space-y-1 text-xs text-stone-700 border-t border-stone-200 pt-2.5">
-                            <p><strong class="text-slate-900"><i class="fa-regular fa-clock mr-1 text-terracotta"></i>Giờ chạy HN:</strong> 10:30, 21:00, 22:00</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-location-dot mr-1 text-terracotta"></i>Điểm đón HN:</strong> Bx Mỹ Đình, Bx Gia Lâm, Bx Giáp Bát, Ngã tư Nội Bài</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-shield-halved mr-1 text-terracotta"></i>Tiện ích:</strong> Xe đời mới, nệm da cao cấp, rèm cách âm chống ồn.</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center text-xs border-t border-stone-200 pt-2.5">
-                        <span class="font-extrabold text-terracotta text-sm">550.000 VNĐ / Cabin</span>
-                        <span class="text-[11px] text-stone-500"><i class="fa-solid fa-couch"></i> Nệm da êm ái</span>
-                    </div>
-                </div>
-
-                <!-- Bus 3 -->
-                <div class="border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-terracotta transition-all bg-stone-50/60 space-y-3 flex flex-col justify-between">
-                    <div class="space-y-2.5">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-bold text-sm sm:text-base text-slate-800">Nhà Xe Quang Giang</h3>
-                                <p class="text-[11px] sm:text-xs text-stone-500">Cabin Đôi Hiện Đại • Đưa đón tận tình</p>
-                            </div>
-                            <span class="bg-stone-200 text-stone-700 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded">Chu Đáo</span>
-                        </div>
-                        <div class="space-y-1 text-xs text-stone-700 border-t border-stone-200 pt-2.5">
-                            <p><strong class="text-slate-900"><i class="fa-regular fa-clock mr-1 text-terracotta"></i>Giờ chạy HN:</strong> 17:00, 21:00, 22:00</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-location-dot mr-1 text-terracotta"></i>Điểm đón HN:</strong> Bx Mỹ Đình, Công viên Cầu Giấy, Nội Bài</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-van-shuttle mr-1 text-terracotta"></i>Dịch vụ:</strong> Xe trung chuyển miễn phí nội thành TP Hà Giang đến điểm thuê xe.</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center text-xs border-t border-stone-200 pt-2.5">
-                        <span class="font-extrabold text-terracotta text-sm">550.000 VNĐ / Cabin</span>
-                        <span class="text-[11px] text-stone-500"><i class="fa-solid fa-bottle-water"></i> Nước & Khăn</span>
-                    </div>
-                </div>
-
-                <!-- Bus 4 -->
-                <div class="border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-terracotta transition-all bg-stone-50/60 space-y-3 flex flex-col justify-between">
-                    <div class="space-y-2.5">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="font-bold text-sm sm:text-base text-slate-800">Nhà Xe Quang Đạo</h3>
-                                <p class="text-[11px] sm:text-xs text-stone-500">Dòng Xe VIP Cung Điện • Lái xe an toàn</p>
-                            </div>
-                            <span class="bg-stone-200 text-stone-700 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded">Chuyên Nghiệp</span>
-                        </div>
-                        <div class="space-y-1 text-xs text-stone-700 border-t border-stone-200 pt-2.5">
-                            <p><strong class="text-slate-900"><i class="fa-regular fa-clock mr-1 text-terracotta"></i>Giờ chạy HN:</strong> 09:10, 19:30, 21:00</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-location-dot mr-1 text-terracotta"></i>Điểm đón HN:</strong> Bx Mỹ Đình, Bx Yên Nghĩa, Bx Sơn Tây</p>
-                            <p><strong class="text-slate-900"><i class="fa-solid fa-user-shield mr-1 text-terracotta"></i>Hỗ trợ:</strong> Tiếp viên chu đáo, tư vấn điểm thuê xe máy uy tín tại bến.</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center text-xs border-t border-stone-200 pt-2.5">
-                        <span class="font-extrabold text-terracotta text-sm">550.000 VNĐ / Cabin</span>
-                        <span class="text-[11px] text-stone-500"><i class="fa-solid fa-tv"></i> Màn hình LCD</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Geographically Optimized Itinerary -->
+        <!-- 2. Geographically Optimized Route Map & Itinerary Section -->
         <section id="itinerary" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5 sm:space-y-6">
             <div class="border-b border-stone-200 pb-3 sm:pb-4">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
                     <div>
                         <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
                             <i class="fa-solid fa-route text-terracotta"></i> 
-                            Lịch Trình Chi Tiết 3N2Đ Tối Ưu Từng Giờ
+                            Sơ Đồ Di Chuyển & Lịch Trình Chi Tiết 3N2Đ Tối Ưu
                         </h2>
                         <p class="text-stone-600 text-xs sm:text-sm mt-1">
                             Lộ trình khép kín không ngược đường: <strong>TP Hà Giang → Quản Bạ → Yên Minh → Sủng Là → Sà Phìn → Lũng Cú / Lô Lô Chải → Đồng Văn → Mã Pí Lèng / Sông Nho Quế → Mèo Vạc / Đường M → Lùng Tám → TP Hà Giang</strong>.
@@ -1289,7 +562,7 @@
                         <div class="space-y-0.5">
                             <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Đèo Mã Pí Lèng → Cafe Mí Pó → Chèo Thuyền Sông Nho Quế (Hẻm Tu Sản)</h4>
                             <p class="text-xs text-stone-600 leading-relaxed">
-                                Chạy trên đèo Mã Pí Lèng ngắm đại vực Tu Sản. Dừng uống cafe Mí Pó view toàn cảnh. Đi xe ôm xuống bến thuyền Nho Quế trải nghiệm du thuyền trên dòng nước ngọc bích.
+                                Chạy trên đèo Mã Pí Lèng ngắm đại vực Tu Sản. Dừng uống cafe Mí Pó view toàn cảnh. Đi xe ôm xuống bến thuyền Nho Quế trải nghiệm du thuyền trên dòng sông xanh ngọc bích.
                             </p>
                         </div>
                     </div>
@@ -1356,17 +629,17 @@
             </div>
         </section>
 
-        <!-- Section 4: Spots, Stay & Food Directory -->
+        <!-- 3. Spots, Stay & Food Directory Section -->
         <section id="destinations" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5 sm:space-y-6">
             <div class="border-b border-stone-200 pb-3 sm:pb-4">
                 <div class="flex flex-col gap-3">
                     <div>
                         <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
                             <i class="fa-solid fa-store text-terracotta"></i> 
-                            Thư Viện Địa Điểm, Lưu Trú & Ẩm Thực
+                            Thư Viện Địa Điểm, Lưu Trú & Ẩm Thực Tối Ưu
                         </h2>
                         <p class="text-stone-600 text-xs sm:text-sm mt-1">
-                            Tuyển chọn 12+ địa điểm hàng đầu được đánh giá cao trên TikTok & Threads.
+                            Tuyển chọn 18+ địa điểm, điểm dừng chân view triệu đô & quán ăn chuẩn vị được review nhiều nhất trên Threads, TikTok & FB Phượt.
                         </p>
                     </div>
 
@@ -1374,13 +647,13 @@
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
                         <div class="relative w-full sm:w-64">
                             <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-stone-400 text-xs"></i>
-                            <input type="text" id="dirSearch" onkeyup="searchDir()" placeholder="Tìm kiếm địa điểm, món ăn..." class="pl-8 pr-3 py-2 text-xs rounded-xl border border-stone-300 focus:outline-none focus:border-terracotta w-full">
+                            <input type="text" id="dirSearch" onkeyup="searchDir()" placeholder="Tìm kiếm địa điểm, quán cafe, món ăn..." class="pl-8 pr-3 py-2 text-xs rounded-xl border border-stone-300 focus:outline-none focus:border-terracotta w-full">
                         </div>
                         <div class="flex overflow-x-auto no-scrollbar gap-1.5 py-0.5">
                             <button onclick="filterDir('all', this)" class="dir-btn active bg-slate-800 text-white text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">Tất cả</button>
-                            <button onclick="filterDir('spot', this)" class="dir-btn bg-stone-100 text-stone-700 hover:bg-stone-200 text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">Danh Thắng</button>
-                            <button onclick="filterDir('stay', this)" class="dir-btn bg-stone-100 text-stone-700 hover:bg-stone-200 text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">Homestay</button>
-                            <button onclick="filterDir('food', this)" class="dir-btn bg-stone-100 text-stone-700 hover:bg-stone-200 text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">Ẩm Thực & Cafe</button>
+                            <button onclick="filterDir('spot', this)" class="dir-btn bg-stone-100 text-stone-700 hover:bg-stone-200 text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">Danh Thắng & Cảnh Quan</button>
+                            <button onclick="filterDir('stay', this)" class="dir-btn bg-stone-100 text-stone-700 hover:bg-stone-200 text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">Homestay & Bản Cổ</button>
+                            <button onclick="filterDir('food', this)" class="dir-btn bg-stone-100 text-stone-700 hover:bg-stone-200 text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">Ẩm Thực & Cafe View Đèo</button>
                         </div>
                     </div>
                 </div>
@@ -1394,9 +667,9 @@
                         <span class="text-[11px] font-bold text-terracotta">KHUYÊN NGHỈ ĐÊM 1</span>
                         <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">Lô Lô Chải</span>
                     </div>
-                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Homestay Bản Lô Lô Chải (Lolo Village Ancient House)</h3>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Homestay Bản Lô Lô Chải (Lolo Village)</h3>
                     <p class="text-xs text-stone-600 leading-relaxed">
-                        Nhà trình tường cổ kính nện đất, mái lợp ngói âm dương nằm ngay dưới chân núi Rồng. Không gian ấm cúng, đêm mát 18°C.
+                        Nhà trình tường cổ kính nện đất, mái lợp ngói âm dương nằm ngay dưới chân núi Rồng Cực Bắc. Không gian yên bình, đêm mát 18°C.
                     </p>
                     <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
                         <span><strong>Giá:</strong> 800k - 1.2M/phòng</span>
@@ -1407,12 +680,12 @@
                 <!-- Card 2 -->
                 <div class="dir-card spot border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
-                        <span class="text-[11px] font-bold text-moss">MUST-VISIT KỲ TÍCH</span>
+                        <span class="text-[11px] font-bold text-moss">KỲ TÍCH THIÊN NHIÊN</span>
                         <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Mã Pí Lèng</span>
                     </div>
-                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Hẻm Tu Sản & Sông Nho Quế</h3>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Hẻm Tu Sản & Du Thuyền Sông Nho Quế</h3>
                     <p class="text-xs text-stone-600 leading-relaxed">
-                        Đại vực kiến tạo sâu nhất Đông Nam Á. Trải nghiệm du thuyền ngắm nhìn vách đá cao nghìn mét bên dòng nước ngọc bích.
+                        Đại vực kiến tạo sâu nhất Đông Nam Á. Trải nghiệm du thuyền ngắm vách đá dựng đứng nghìn mét bên dòng sông xanh ngọc bích.
                     </p>
                     <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
                         <span><strong>Vé thuyền:</strong> 150k (gồm xe ôm)</span>
@@ -1428,7 +701,7 @@
                     </div>
                     <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Lẩu Gà Đen Bản (Nhà Hàng CND Đồng Văn)</h3>
                     <p class="text-xs text-stone-600 leading-relaxed">
-                        Thịt gà xương đen săn chắc hầm cùng sâm đất, táo đỏ và cải mèo ngọt đắng. Món ăn hồi phục thể lực số 1 sau ngày vượt đèo.
+                        Thịt gà xương đen săn chắc hầm cùng sâm đất, táo đỏ và cải mèo ngọt đắng. Món ăn giải mỏi tốt nhất sau ngày đổ đèo.
                     </p>
                     <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
                         <span><strong>Chi phí:</strong> ~500k/nồi 2 người</span>
@@ -1437,6 +710,102 @@
                 </div>
 
                 <!-- Card 4 -->
+                <div class="dir-card food border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
+                    <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
+                        <span class="text-[11px] font-bold text-terracotta">CAFE & NHẠC SÁO MÔNG</span>
+                        <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded">Đỉnh Mã Pí Lèng</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Cà Phê A Páo Đỉnh Đèo Mã Pí Lèng</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Quán cafe mộc mạc bên vách đá. Lắng nghe anh A Páo (người Mông) thổi sáo núi rừng ngân vang giữa biển mây và vực sâu Nho Quế.
+                    </p>
+                    <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
+                        <span><strong>Nước uống:</strong> 35.000 - 50.000₫</span>
+                        <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.9/5★</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="dir-card spot border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
+                    <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
+                        <span class="text-[11px] font-bold text-moss">LÀNG BẢN ĐẸP VIRAL</span>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Mèo Vạc</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Làng Văn Hóa H'Mông Pả Vi</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Làng du lịch cộng đồng với các ngôi nhà trình tường lục giác lợp mái âm dương. Lối đi rợp cỏ hoa tươi xanh, check-in lên ảnh góc nào cũng xinh.
+                    </p>
+                    <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
+                        <span><strong>Vé tham quan:</strong> Miễn phí</span>
+                        <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.9/5★</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="dir-card spot border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
+                    <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
+                        <span class="text-[11px] font-bold text-moss">DỪNG CHÂN SỐNG ẢO</span>
+                        <span class="text-[10px] bg-stone-200 text-stone-700 font-bold px-2 py-0.5 rounded">Yên Minh</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Cây Thông Cô Đơn Yên Minh</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Cây thông đứng sừng sững giữa vực núi cua đèo Yên Minh. Điểm dừng nghỉ chân chụp ảnh kỷ niệm cực hot trên TikTok và Threads.
+                    </p>
+                    <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
+                        <span><strong>Check-in:</strong> Miễn phí</span>
+                        <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.7/5★</span>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="dir-card spot border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
+                    <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
+                        <span class="text-[11px] font-bold text-moss">TREKKING TOÀN CẢNH</span>
+                        <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">Mã Pí Lèng</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Vách Đá Trắng (Mã Pí Lèng Skywalk)</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Cung đường đi bộ ngắn men theo vách núi đá vôi. Nơi ngắm trọn toàn cảnh khúc uốn lượn hùng vĩ của đèo Mã Pí Lèng và vực Tu Sản từ trên cao.
+                    </p>
+                    <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
+                        <span><strong>Trải nghiệm:</strong> Trekking nhẹ 20 phút</span>
+                        <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.9/5★</span>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="dir-card stay border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
+                    <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
+                        <span class="text-[11px] font-bold text-terracotta">THỊ TRẤN BỊ LÃNG QUÊN</span>
+                        <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded">Đồng Văn</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Thị Trấn Cổ Phó Bảng & Bản Lao Xa</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Ngôi làng cổ nằm lọt thỏm giữa thung lũng đá tai mèo. Yên bình, rợp bóng vách đất trình tường đỏ gạch và lò đúc bạc truyền thống của người H'Mông.
+                    </p>
+                    <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
+                        <span><strong>Điểm đặc biệt:</strong> Không gian tĩnh lặng</span>
+                        <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.8/5★</span>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="dir-card food border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
+                    <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
+                        <span class="text-[11px] font-bold text-amber-600">CAFE CỔ TRĂM NĂM</span>
+                        <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded">Phố Cổ Đồng Văn</span>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Cà Phê Phố Cổ Đồng Văn & Chè Thắng Dền</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        Căn nhà cổ kiến trúc Tày - H'Mông trăm tuổi rực rỡ đèn lồng đêm. Thưởng thức ly cafe phin nóng và bát chè Thắng Dền dẻo thơm nhân đậu đỗ.
+                    </p>
+                    <div class="text-[11px] text-stone-500 pt-2 border-t border-stone-200 flex justify-between">
+                        <span><strong>Món ăn vặt:</strong> 15.000 - 40.000₫</span>
+                        <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.8/5★</span>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
                 <div class="dir-card spot border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-moss">DI TÍCH LỊCH SỬ</span>
@@ -1452,7 +821,7 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
+                <!-- Card 11 -->
                 <div class="dir-card food border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-amber-600">MÓN ĂN ĐÊM BỔ DƯỠNG</span>
@@ -1468,13 +837,13 @@
                     </div>
                 </div>
 
-                <!-- Card 6 -->
+                <!-- Card 12 -->
                 <div class="dir-card food border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-terracotta">CAFE VIEW ĐỈNH ĐÈO</span>
                         <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-2 py-0.5 rounded">Mã Pí Lèng</span>
                     </div>
-                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Coffee Mí Pó & Cafe Panorama</h3>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Coffee Mí Pó & Panorama Mã Pí Lèng</h3>
                     <p class="text-xs text-stone-600 leading-relaxed">
                         Tọa lạc ngay vách núi đèo Mã Pí Lèng, sở hữu góc ban công quan sát toàn cảnh sông Nho Quế xanh biếc chảy qua khe hẻm núi.
                     </p>
@@ -1484,13 +853,13 @@
                     </div>
                 </div>
 
-                <!-- Card 7 -->
+                <!-- Card 13 -->
                 <div class="dir-card spot border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-moss">CHECK-IN VIRAL</span>
-                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Sủng Là</span>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Sủng Là & Mèo Vạc</span>
                     </div>
-                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Dốc Thẩm Mã & Cua M Mèo Vạc</h3>
+                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm font-dir-title">Dốc Thẩm Mã & Đường Cua M Mèo Vạc</h3>
                     <p class="text-xs text-stone-600 leading-relaxed">
                         Hai cung đường đèo uốn lượn đẹp mắt nhất Hà Giang. Nơi lý tưởng để chụp ảnh góc rộng toàn cảnh các khúc cua tay áo nổi tiếng.
                     </p>
@@ -1500,7 +869,7 @@
                     </div>
                 </div>
 
-                <!-- Card 8 -->
+                <!-- Card 14 -->
                 <div class="dir-card food border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-amber-600">BỮA SÁNG CHUẨN VỊ</span>
@@ -1516,7 +885,7 @@
                     </div>
                 </div>
 
-                <!-- Card 9 -->
+                <!-- Card 15 -->
                 <div class="dir-card stay border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-terracotta">KHUYÊN NGHỈ ĐÊM 2</span>
@@ -1532,7 +901,7 @@
                     </div>
                 </div>
 
-                <!-- Card 10 -->
+                <!-- Card 16 -->
                 <div class="dir-card spot border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-moss">VĂN HÓA TRUYỀN THỐNG</span>
@@ -1548,7 +917,7 @@
                     </div>
                 </div>
 
-                <!-- Card 11 -->
+                <!-- Card 17 -->
                 <div class="dir-card food border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-amber-600">ĐIỂM NGHỈ TẠI BẢN</span>
@@ -1564,7 +933,7 @@
                     </div>
                 </div>
 
-                <!-- Card 12 -->
+                <!-- Card 18 -->
                 <div class="dir-card food border border-stone-200 rounded-xl p-3.5 sm:p-4 hover:shadow-md transition-all bg-stone-50/50 space-y-2">
                     <div class="flex justify-between items-center border-b border-stone-200 pb-1.5">
                         <span class="text-[11px] font-bold text-terracotta">ẨM THỰC ĐI ĐƯỜNG</span>
@@ -1582,163 +951,370 @@
             </div>
         </section>
 
-        <!-- Section 5: Interactive Budget Estimator -->
+        <!-- 4. Budget Calculator Section -->
         <section id="budget" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5 sm:space-y-6">
-            <div class="border-b border-stone-200 pb-3 sm:pb-4">
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
-                    <i class="fa-solid fa-calculator text-terracotta"></i> 
-                    Dự Toán Ngân Sách & Bộ Tính Chi Phí (2 Người)
-                </h2>
-                <p class="text-stone-600 text-xs sm:text-sm mt-1">
-                    Bảng phân bổ chi phí thực tế cho cặp đôi. Bạn có thể thay đổi tùy chọn tự lái xe máy hoặc thuê tài xế Easy Rider.
-                </p>
+            <div class="border-b border-stone-200 pb-3 sm:pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                    <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-terracotta"></i> 
+                        Dự Toán Ngân Sách Linh Hoạt 2 Người
+                    </h2>
+                    <p class="text-stone-600 text-xs sm:text-sm mt-1">
+                        Tự động điều chỉnh tổng chi phí dựa trên tùy chọn hình thức phương tiện di chuyển trên đèo.
+                    </p>
+                </div>
+                
+                <!-- Vehicle Option Toggle -->
+                <div class="bg-stone-100 p-1.5 rounded-xl border border-stone-200 flex items-center shrink-0 self-start sm:self-auto">
+                    <label for="travelMode" class="text-xs font-semibold text-stone-700 mr-2 pl-2">Phương tiện:</label>
+                    <select id="travelMode" onchange="updateBudget()" class="bg-white border border-stone-300 text-slate-800 font-bold text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-terracotta cursor-pointer">
+                        <option value="self">1 Xe Máy Tự Lái (6.800.000₫)</option>
+                        <option value="easy">1 Tự Lái + 1 Easy Rider (8.560.000₫)</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-                <!-- Doughnut Chart (5 cols) -->
-                <div class="lg:col-span-5 space-y-2 text-center">
-                    <h3 class="font-bold text-stone-800 text-xs uppercase tracking-wider">
-                        Tỷ Lệ Chi Phí (Tổng: <span id="budgetTotalHeader">6.800.000₫</span>)
-                    </h3>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <!-- Chart View -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center">
                     <div class="chart-container">
                         <canvas id="budgetChart"></canvas>
                     </div>
+                    <div id="budgetPerPerson" class="text-center mt-3 bg-amber-50 text-amber-900 border border-amber-200 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold">
+                        Chi phí bình quân: 3.400.000₫ / người
+                    </div>
                 </div>
 
-                <!-- Calculator Controls & Table (7 cols) -->
-                <div class="lg:col-span-7 space-y-3 sm:space-y-4">
-                    <!-- Option Selector -->
-                    <div class="p-3 bg-stone-100 rounded-xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                        <span class="font-bold text-slate-800"><i class="fa-solid fa-sliders text-terracotta mr-1"></i> Tùy chọn di chuyển:</span>
-                        <select id="driveOption" onchange="updateBudgetCalc()" class="bg-white border border-stone-300 font-semibold text-slate-800 rounded-lg px-3 py-1.5 focus:outline-none focus:border-terracotta text-xs">
-                            <option value="self">1 Xe Máy Tự Lái (Tối ưu - 6.8 Tr)</option>
-                            <option value="easyrider">Thuê 2 x Easy Rider Lái Hộ (Thư giãn - 8.6 Tr)</option>
-                        </select>
-                    </div>
-
-                    <!-- Cost Table -->
-                    <div class="overflow-x-auto border border-stone-200 rounded-xl">
-                        <table class="w-full text-xs text-left border-collapse">
+                <!-- Budget Breakdown Table -->
+                <div class="lg:col-span-7 space-y-2">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
                             <thead>
-                                <tr class="bg-stone-100 text-stone-700 font-bold border-b border-stone-200">
-                                    <th class="p-2 sm:p-2.5">Hạng Mục</th>
-                                    <th class="p-2 sm:p-2.5">Chi Tiết</th>
-                                    <th class="p-2 sm:p-2.5 text-right">Tổng (2 người)</th>
+                                <tr class="bg-stone-100 text-stone-700 uppercase font-bold border-b border-stone-200">
+                                    <th class="p-2.5">Hạng Mục</th>
+                                    <th class="p-2.5">Chi Tiết Tính Toán</th>
+                                    <th class="p-2.5 text-right">Thành Tiền</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-stone-200 text-stone-700">
-                                <tr>
-                                    <td class="p-2 sm:p-2.5 font-bold text-slate-800">1. Xe Cabin Đôi Khứ Hồi</td>
-                                    <td class="p-2 sm:p-2.5 text-[11px] sm:text-xs">550.000₫/cabin x 2 chiều</td>
-                                    <td class="p-2 sm:p-2.5 text-right font-bold text-slate-800 whitespace-nowrap">1.100.000₫</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 sm:p-2.5 font-bold text-slate-800" id="rowMotoLabel">2. Thuê Xe Máy & Xăng</td>
-                                    <td class="p-2 sm:p-2.5 text-[11px] sm:text-xs" id="rowMotoDetail">3 ngày xe số (180k/ngày) + 200k xăng</td>
-                                    <td class="p-2 sm:p-2.5 text-right font-bold text-slate-800 whitespace-nowrap" id="rowMotoCost">740.000₫</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 sm:p-2.5 font-bold text-slate-800">3. Homestay & Khách Sạn</td>
-                                    <td class="p-2 sm:p-2.5 text-[11px] sm:text-xs">Lô Lô Chải (900k) + Đồng Văn (500k)</td>
-                                    <td class="p-2 sm:p-2.5 text-right font-bold text-slate-800 whitespace-nowrap">1.400.000₫</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 sm:p-2.5 font-bold text-slate-800">4. Vé Tham Quan & Thuyền</td>
-                                    <td class="p-2 sm:p-2.5 text-[11px] sm:text-xs">Thuyền Nho Quế, Cột cờ, Vua Mèo, Pao</td>
-                                    <td class="p-2 sm:p-2.5 text-right font-bold text-slate-800 whitespace-nowrap">520.000₫</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 sm:p-2.5 font-bold text-slate-800">5. Ẩm Thực Đặc Sản</td>
-                                    <td class="p-2 sm:p-2.5 text-[11px] sm:text-xs">Lẩu gà đen, cháo ấu tẩu, phở, 3 bữa trưa</td>
-                                    <td class="p-2 sm:p-2.5 text-right font-bold text-slate-800 whitespace-nowrap">2.160.000₫</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 sm:p-2.5 font-bold text-slate-800">6. Cafe & Dự Phòng</td>
-                                    <td class="p-2 sm:p-2.5 text-[11px] sm:text-xs">Cafe view đèo, gửi xe & quà lưu niệm</td>
-                                    <td class="p-2 sm:p-2.5 text-right font-bold text-slate-800 whitespace-nowrap">880.000₫</td>
-                                </tr>
+                            <tbody id="budgetTableBody" class="divide-y divide-stone-100 text-stone-600">
+                                <!-- Dynamic JS Population -->
                             </tbody>
                             <tfoot>
-                                <tr class="bg-amber-50 text-amber-900 font-bold">
-                                    <td class="p-2 sm:p-2.5" colspan="2">TỔNG CỘNG (2 NGƯỜI)</td>
-                                    <td class="p-2 sm:p-2.5 text-right text-xs sm:text-sm text-terracotta whitespace-nowrap" id="budgetTotalFooter">6.800.000 VNĐ</td>
-                                </tr>
-                                <tr class="bg-stone-50 text-stone-600 font-medium text-[11px] sm:text-xs">
-                                    <td class="p-2" colspan="2">Bình quân mỗi người:</td>
-                                    <td class="p-2 text-right font-bold whitespace-nowrap" id="budgetPerPerson">3.400.000 VNĐ / người</td>
+                                <tr class="bg-slate-800 text-white font-bold text-xs sm:text-sm">
+                                    <td class="p-3 rounded-l-xl">TỔNG CỘNG CHUYẾN ĐÍ</td>
+                                    <td class="p-3">2 Người • 3 Ngày 2 Đêm</td>
+                                    <td id="totalBudgetVal" class="p-3 text-right text-amber-400 font-extrabold rounded-r-xl">6.800.000₫</td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
+                    <p class="text-[11px] text-stone-400 italic mt-2">
+                        *Lưu ý: Ngân sách trên đã bao gồm tất cả chi phí cố định (xe cabin đôi khứ hồi, homestay 2 đêm, thuê xe máy + xăng, ăn uống trọn gói và các loại vé tham quan Nho Quế, Lũng Cú, Dinh Vua Mèo).
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Section 6: Weather Curve, Packing Checklist & Driving Safety Matrix -->
-        <section id="safety" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5 sm:space-y-6">
-            <div class="border-b border-stone-200 pb-3 sm:pb-4">
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
-                    <i class="fa-solid fa-cloud-sun-rain text-terracotta"></i> 
-                    Thời Tiết Cuối Tháng 8, Hành Lý & An Toàn Lái Xe
-                </h2>
-                <p class="text-stone-600 text-xs sm:text-sm mt-1">
-                    Thời tiết cuối tháng 8 mát mẻ nhưng có chênh lệch nhiệt độ ngày/đêm lớn ở vùng cao Lũng Cú & Đồng Văn.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
-                <!-- Weather Chart -->
-                <div class="space-y-2.5">
-                    <h3 class="font-bold text-stone-800 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                        <i class="fa-solid fa-temperature-arrow-down text-terracotta"></i> Biên Độ Nhiệt Ngày vs Đêm (°C)
-                    </h3>
-                    <div class="chart-container">
-                        <canvas id="weatherChart"></canvas>
-                    </div>
-                    <p class="text-[11px] text-stone-500 text-center italic">
-                        Lưu ý: Đêm tại Lô Lô Chải & Đồng Văn hạ nhiệt sâu xuống 18°C.
+        <!-- 5. Community Guidelines & Social Media Reviews Section -->
+        <section id="community-guide" class="space-y-6">
+            <!-- Community Dos & Don'ts -->
+            <div class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-4">
+                <div class="border-b border-stone-200 pb-3">
+                    <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-users text-terracotta"></i> 
+                        Tổng Hợp Lưu Ý Văn Hóa & An Toàn Từ Cộng Đồng Phượt
+                    </h2>
+                    <p class="text-stone-600 text-xs sm:text-sm mt-1">
+                        Những quy tắc "nằm lòng" giúp chuyến đi văn minh, an toàn và lưu giữ ký ức đẹp nhất.
                     </p>
                 </div>
 
-                <!-- Gear Checklist & Driving Rules -->
-                <div class="space-y-3.5">
-                    <h3 class="font-bold text-stone-800 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                        <i class="fa-solid fa-list-check text-moss"></i> Checklist Hành Lý Mùa Thu
-                    </h3>
-
-                    <div id="gearChecklist" class="bg-stone-50 p-3.5 rounded-xl border border-stone-200 space-y-2 text-xs text-stone-700">
-                        <label class="flex items-center gap-2.5 cursor-pointer hover:text-slate-900">
-                            <input type="checkbox" checked class="w-4 h-4 text-terracotta rounded border-stone-300 focus:ring-terracotta">
-                            <span><strong>Áo khoác gió / Áo cardigan nhẹ:</strong> Giữ ấm buổi tối tại Lô Lô Chải (18°C).</span>
-                        </label>
-                        <label class="flex items-center gap-2.5 cursor-pointer hover:text-slate-900">
-                            <input type="checkbox" checked class="w-4 h-4 text-terracotta rounded border-stone-300 focus:ring-terracotta">
-                            <span><strong>Giày thể thao rãnh sâu:</strong> Leo bậc thang Cột cờ Lũng Cú & bến sông Nho Quế.</span>
-                        </label>
-                        <label class="flex items-center gap-2.5 cursor-pointer hover:text-slate-900">
-                            <input type="checkbox" checked class="w-4 h-4 text-terracotta rounded border-stone-300 focus:ring-terracotta">
-                            <span><strong>Áo mưa bộ chất lượng:</strong> Tránh mưa rào bất chợt khi vượt đèo dốc.</span>
-                        </label>
-                        <label class="flex items-center gap-2.5 cursor-pointer hover:text-slate-900">
-                            <input type="checkbox" class="w-4 h-4 text-terracotta rounded border-stone-300 focus:ring-terracotta">
-                            <span><strong>Túi chống nước điện thoại:</strong> Bảo vệ máy khi chèo thuyền Nho Quế.</span>
-                        </label>
-                        <label class="flex items-center gap-2.5 cursor-pointer hover:text-slate-900">
-                            <input type="checkbox" class="w-4 h-4 text-terracotta rounded border-stone-300 focus:ring-terracotta">
-                            <span><strong>Sạc dự phòng 20.000mAh:</strong> Chụp ảnh sống ảo cả ngày không lo hết pin.</span>
-                        </label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl space-y-2">
+                        <h3 class="font-bold text-emerald-900 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i> NÊN LÀM (DOS)
+                        </h3>
+                        <ul class="space-y-1.5 text-emerald-900/90 leading-relaxed">
+                            <li>• Chuẩn bị sẵn tiền mặt nhỏ (10k, 20k, 50k) vì nhiều điểm bản làng không có sóng 4G/Internet Banking.</li>
+                            <li>• Sử dụng SIM Viettel để đảm bảo luôn có sóng giữ liên lạc trên các cung đường đèo heo hút.</li>
+                            <li>• Xin phép người dân địa phương trước khi chụp ảnh chân dung hoặc quay phim họ.</li>
+                            <li>• Thuê trang phục dân tộc chính gốc tại bản Lô Lô Chải để có bộ ảnh sống ảo đẹp chuẩn văn hóa.</li>
+                            <li>• Mang theo áo khoác gió nhẹ và khăn quàng cổ vì nhiệt độ đêm ở Lô Lô Chải hạ xuống 18°C.</li>
+                        </ul>
                     </div>
 
-                    <!-- Driving Safety Box -->
-                    <div class="p-3.5 bg-slate-900 text-white rounded-xl space-y-1.5 text-xs">
-                        <div class="font-bold text-amber-400 text-xs sm:text-sm flex items-center gap-2">
-                            <i class="fa-solid fa-motorcycle"></i> Quy Tắc Bắt Buộc Khi Lái Xe Đường Đèo
-                        </div>
-                        <ul class="list-disc pl-4 space-y-1 text-stone-300 text-[11px] leading-relaxed">
-                            <li><strong>Phanh động cơ (Số thấp):</strong> Đổ dốc Bắc Sum, Mã Pí Lèng gài số 1 hoặc 2. Tuyệt đối KHÔNG gạt số 0 (mo) rà phanh.</li>
-                            <li><strong>Bóp còi tại khúc cua mù:</strong> Bóp còi nhẹ báo hiệu khi vào các cua uốn khuất tầm nhìn.</li>
-                            <li><strong>Chủ động đổ xăng:</strong> Đổ đầy xăng ngay khi bình còn 1/3 tại các thị trấn lớn.</li>
+                    <div class="bg-rose-50 border border-rose-200 p-4 rounded-xl space-y-2">
+                        <h3 class="font-bold text-rose-900 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-circle-xmark text-rose-600"></i> KHÔNG NÊN LÀM (DON'TS)
+                        </h3>
+                        <ul class="space-y-1.5 text-rose-900/90 leading-relaxed">
+                            <li>• <strong>TUYỆT ĐỐI KHÔNG:</strong> Cho tiền trẻ em ven đường để tránh tạo thói quen bỏ học đi xin tiền. Nên chuẩn bị kẹo ngọt chia cho các bé.</li>
+                            <li>• Không xoa đầu trẻ em dân tộc (theo quan niệm tâm linh địa phương).</li>
+                            <li>• Không vứt rác bừa bãi dọc đèo Mã Pí Lèng hay trên thuyền sông Nho Quế.</li>
+                            <li>• Không lái xe máy sau 18:00 tối vì đường đèo không có đèn đường, sương mù dày rất nguy hiểm.</li>
+                            <li>• Tuyệt đối không sử dụng rượu bia khi cầm lái xe máy vượt đèo dốc.</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Real Reviews Feed -->
+            <section id="social" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-4">
+                <div class="border-b border-stone-200 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-comments text-terracotta"></i> 
+                            Góc Nhìn Giới Trẻ & Review Chân Thật MXH
+                        </h2>
+                        <p class="text-stone-600 text-xs sm:text-sm mt-1">
+                            Lọc bỏ tin quảng cáo thương mại - Đánh giá thực tế từ người đi về trên Threads, TikTok & FB.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-1.5">
+                        <button onclick="switchSocialTab('threads')" id="stab-threads" class="social-tab social-tab-active px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">Threads</button>
+                        <button onclick="switchSocialTab('tiktok')" id="stab-tiktok" class="social-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">TikTok</button>
+                        <button onclick="switchSocialTab('facebook')" id="stab-facebook" class="social-tab bg-stone-100 text-stone-700 hover:bg-stone-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">Facebook</button>
+                    </div>
+                </div>
+
+                <!-- Social Content Panels -->
+                <div id="socialContent" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <!-- Dynamic Social Posts Populated by JS -->
+                </div>
+            </section>
+        </section>
+
+        <!-- 6. Double Cabin Bus Section -->
+        <section id="transport" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-5">
+            <div class="border-b border-stone-200 pb-3">
+                <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <i class="fa-solid fa-bus text-terracotta"></i> 
+                    Danh Sách Nhà Xe Cabin Đôi Hà Nội ⇄ Hà Giang
+                </h2>
+                <p class="text-stone-600 text-xs sm:text-sm mt-1">
+                    Xe cabin giường đôi riêng tư, êm ái cho cặp đôi. Đặc quyền: <strong>Cho phép ngủ lại trên xe tại bến Hà Giang đến 06:30 sáng miễn phí</strong>.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                <!-- Bus 1 -->
+                <div class="border border-stone-200 rounded-xl p-4 space-y-2 bg-stone-50/60">
+                    <div class="flex justify-between items-center font-bold text-slate-800">
+                        <span class="text-sm">Bằng Phấn Bus</span>
+                        <span class="text-amber-600">550.000₫/cabin</span>
+                    </div>
+                    <p class="text-stone-600"><strong>Điểm đón:</strong> Bến xe Mỹ Đình, Trần Quang Khải</p>
+                    <p class="text-stone-600"><strong>Giờ chạy:</strong> 21:00, 21:30</p>
+                    <p class="text-stone-500 text-[11px]">Xe cabin đôi đời mới, rèm che riêng tư, cổng sạc USB, Wifi tốc độ cao.</p>
+                </div>
+
+                <!-- Bus 2 -->
+                <div class="border border-stone-200 rounded-xl p-4 space-y-2 bg-stone-50/60">
+                    <div class="flex justify-between items-center font-bold text-slate-800">
+                        <span class="text-sm">Quang Tuyến VIP</span>
+                        <span class="text-amber-600">550.000₫/cabin</span>
+                    </div>
+                    <p class="text-stone-600"><strong>Điểm đón:</strong> Bến xe Gia Lâm, Mỹ Đình</p>
+                    <p class="text-stone-600"><strong>Giờ chạy:</strong> 20:30, 21:15</p>
+                    <p class="text-stone-500 text-[11px]">Cabin trang bị đệm massage nhẹ, nước uống và khăn lạnh miễn phí.</p>
+                </div>
+
+                <!-- Bus 3 -->
+                <div class="border border-stone-200 rounded-xl p-4 space-y-2 bg-stone-50/60">
+                    <div class="flex justify-between items-center font-bold text-slate-800">
+                        <span class="text-sm">Quang Giang Express</span>
+                        <span class="text-amber-600">500.000₫/cabin</span>
+                    </div>
+                    <p class="text-stone-600"><strong>Điểm đón:</strong> Ngã tư Nội Bài, Bến Mỹ Đình</p>
+                    <p class="text-stone-600"><strong>Giờ chạy:</strong> 21:00</p>
+                    <p class="text-stone-500 text-[11px]">Đội ngũ tài xế chạy điềm đặn, lái đêm êm ái giúp ngủ ngon giấc.</p>
+                </div>
+
+                <!-- Bus 4 -->
+                <div class="border border-stone-200 rounded-xl p-4 space-y-2 bg-stone-50/60">
+                    <div class="flex justify-between items-center font-bold text-slate-800">
+                        <span class="text-sm">Quang Đạo Limousine</span>
+                        <span class="text-amber-600">550.000₫/cabin</span>
+                    </div>
+                    <p class="text-stone-600"><strong>Điểm đón:</strong> Khách sạn Phố Cổ, Bến Mỹ Đình</p>
+                    <p class="text-stone-600"><strong>Giờ chạy:</strong> 21:30</p>
+                    <p class="text-stone-500 text-[11px]">Có hỗ trợ xe trung chuyển đón trả tận nơi trong nội thành Hà Nội.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Safety, Weather & Emergency Section -->
+        <section id="safety" class="bg-white rounded-2xl p-4 sm:p-8 border border-stone-200 shadow-sm space-y-6">
+            <div class="border-b border-stone-200 pb-3">
+                <h2 class="text-lg sm:text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <i class="fa-solid fa-cloud-sun-rain text-terracotta"></i> 
+                    Cẩm Nang An Toàn, Khí Hậu & Hotlines Cứu Hộ Cấp Cứu
+                </h2>
+                <p class="text-stone-600 text-xs sm:text-sm mt-1">
+                    Dự báo thời tiết dịp 28/8 - 31/8, biên độ nhiệt chênh lệch theo độ cao, trang phục khuyên dùng và kỹ thuật đổ đèo an toàn.
+                </p>
+            </div>
+
+            <!-- Weather & Climate Section Breakdown -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+                <!-- Weather Features & Temperature Profile -->
+                <div class="lg:col-span-7 bg-slate-900 text-white p-4 sm:p-5 rounded-2xl border border-slate-800 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                            <h3 class="font-bold text-amber-400 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-temperature-three-quarters"></i> Dự Báo Khí Hậu Dịp 28/8 – 31/8 Theo Độ Cao
+                            </h3>
+                            <span class="text-[10px] bg-amber-500/20 text-amber-300 font-semibold px-2 py-0.5 rounded border border-amber-500/30">Chớm Thu Cao Nguyên</span>
+                        </div>
+                        <p class="text-stone-300 text-xs leading-relaxed">
+                            Cuối tháng 8, Hà Giang bước vào giai đoạn thời tiết đẹp nhất năm: Nắng dịu nhẹ ban ngày, cực kỳ ít mưa dốc, đêm mát se lạnh. Tuy nhiên <strong>nhiệt độ chênh lệch rất rõ rệt theo độ cao</strong> (Thành phố Hà Giang ấm nóng $\rightarrow$ Đồng Văn & Lô Lô Chải lạnh về đêm).
+                        </p>
+                    </div>
+
+                    <!-- Visual Temperature Bar by Altitude -->
+                    <div class="space-y-2.5 text-xs">
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-stone-300 font-semibold"><i class="fa-solid fa-city text-amber-400 mr-1"></i> TP Hà Giang (Độ cao ~100m)</span>
+                                <span class="text-amber-400 font-bold">26°C - 33°C (Nóng ẩm)</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-stone-300 font-semibold"><i class="fa-solid fa-mountain text-emerald-400 mr-1"></i> Quản Bạ & Yên Minh (Độ cao ~800m)</span>
+                                <span class="text-emerald-400 font-bold">22°C - 28°C (Mát mẻ)</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-stone-300 font-semibold"><i class="fa-solid fa-hill-rockslide text-sky-400 mr-1"></i> Thị Trấn Đồng Văn (Độ cao ~1.100m)</span>
+                                <span class="text-sky-300 font-bold">18°C - 24°C (Se lạnh đêm)</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-sky-400 to-blue-500 h-full rounded-full" style="width: 48%"></div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-stone-300 font-semibold"><i class="fa-solid fa-snowflake text-indigo-300 mr-1"></i> Lô Lô Chải - Cột Cờ Lũng Cú (Độ cao ~1.500m)</span>
+                                <span class="text-indigo-300 font-bold">16°C - 21°C (Lạnh đêm)</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-indigo-400 to-purple-500 h-full rounded-full" style="width: 35%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/80 p-2.5 rounded-xl border border-slate-700/80 text-[11px] text-stone-300 flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-sun text-amber-400 text-base shrink-0"></i>
+                        <span><strong>Mẹo thời tiết:</strong> Hãy chuẩn bị 1 áo khoác gió mỏng nhẹ chống sương/nước để mặc khi đổ đèo buổi sáng sớm hoặc khi đi dạo đêm tại Lô Lô Chải.</span>
+                    </div>
+                </div>
+
+                <!-- Weather Gear & Packing Checklist -->
+                <div class="lg:col-span-5 bg-amber-50/70 p-4 rounded-2xl border border-amber-200 flex flex-col justify-between space-y-3">
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2 border-b border-amber-200/80 pb-2">
+                            <i class="fa-solid fa-shirt text-terracotta"></i> Trang Phục Chuẩn Bị Theo Khí Hậu
+                        </h3>
+                        <ul class="space-y-2 text-xs text-stone-700 mt-2.5 leading-relaxed">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                                <span><strong>Áo khoác gió/Gilet chống nước:</strong> Giữ ấm cơ thể khi chạy xe máy vận tốc 40km/h trên đèo lộng gió.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                                <span><strong>Bộ áo mưa tách rời (Áo + Quần):</strong> Tuyệt đối KHÔNG dùng áo mưa cánh dơi vì gió đèo thổi trùm vào bánh xe rất nguy hiểm.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                                <span><strong>Giày thể thao đế bám tốt:</strong> Phù hợp leo bậc đá Cột cờ Lũng Cú, trekking Vách Đá Trắng và xuống bến sông Nho Quế.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                                <span><strong>Túi bọc chống nước Balo:</strong> Bảo vệ Balo chằng sau xe khi gặp các cơn mưa rào bất chợt ngọn núi.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                                <span><strong>Thuốc cá nhân:</strong> Berberin / Smecta (tiêu hóa), thuốc say xe, xịt côn trùng, gạc y tế cá nhân.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amber-100/80 p-2.5 rounded-xl border border-amber-300/60 text-[11px] text-amber-900 font-semibold">
+                        <i class="fa-solid fa-shield text-amber-700 mr-1"></i> Ưu tiên quần áo chất liệu nhẹ khô, co giãn tốt để vận động thoải mái.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safety Grid: Bike Inspection, Driving Rules & Hotlines -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs pt-2">
+                <!-- Motorbike Checklist -->
+                <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 space-y-3">
+                    <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-terracotta"></i> Checklist Thuê Xe Máy (Tự Kiểm)
+                    </h3>
+                    <div class="space-y-2 text-stone-600">
+                        <label class="flex items-start gap-2 cursor-pointer" onclick="toggleChecklist(this)">
+                            <input type="checkbox" class="mt-0.5 rounded text-terracotta focus:ring-0">
+                            <span>Kiểm tra độ bám phanh trước/sau & độ mòn lốp xe.</span>
+                        </label>
+                        <label class="flex items-start gap-2 cursor-pointer" onclick="toggleChecklist(this)">
+                            <input type="checkbox" class="mt-0.5 rounded text-terracotta focus:ring-0">
+                            <span>Thử đèn pha, xi-nhan và còi (bắt buộc còi to để bóp cua đèo).</span>
+                        </label>
+                        <label class="flex items-start gap-2 cursor-pointer" onclick="toggleChecklist(this)">
+                            <input type="checkbox" class="mt-0.5 rounded text-terracotta focus:ring-0">
+                            <span>Yêu cầu nhà xe đưa 2 mũ bảo hiểm 3/4 kính chắn bụi.</span>
+                        </label>
+                        <label class="flex items-start gap-2 cursor-pointer" onclick="toggleChecklist(this)">
+                            <input type="checkbox" class="mt-0.5 rounded text-terracotta focus:ring-0">
+                            <span>Lấy dây chằng cao su và túi bọc chống nước cho Balo.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Downhill Driving & Legal Protocol -->
+                <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 space-y-3">
+                    <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> Quy Tắc Đổ Đèo & Luật CSGT
+                    </h3>
+                    <ul class="space-y-1.5 text-stone-600 leading-relaxed">
+                        <li>• <strong>Lên số nào - Xuống số đó:</strong> Đổ đèo duy trì Số 1 hoặc Số 2 để động cơ tự hãm tốc (Phanh bằng máy).</li>
+                        <li>• <strong>TUYỆT ĐỐI KHÔNG:</strong> Bóp chết phanh đĩa liên tục gây sôi dầu phanh mất phanh hoàn toàn.</li>
+                        <li>• <strong>Nồng độ cồn = 0:</strong> CSGT kiểm tra nồng độ cồn nghiêm ngặt tại TP Hà Giang và Phố cổ Đồng Văn.</li>
+                        <li>• Giữ nguyên bằng lái A1/A2 hợp lệ và giấy đăng ký xe do cửa hàng cung cấp.</li>
+                    </ul>
+                </div>
+
+                <!-- Emergency Hotlines -->
+                <div class="bg-slate-900 text-white p-4 rounded-xl space-y-3">
+                    <h3 class="font-bold text-amber-400 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-phone-volume"></i> Hotlines Cứu Hộ Hà Giang
+                    </h3>
+                    <div class="space-y-2 text-stone-300">
+                        <div>
+                            <div class="text-[10px] text-stone-400">Cứu hộ Xe máy TP Hà Giang (75 Cầu Mè):</div>
+                            <a href="tel:0915638638" class="font-bold text-amber-300 hover:underline"><i class="fa-solid fa-phone text-[10px] mr-1"></i> 0915.638.638</a>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-stone-400">Cứu hộ Đèo Mã Pí Lèng & Đồng Văn:</div>
+                            <a href="tel:0988223344" class="font-bold text-amber-300 hover:underline"><i class="fa-solid fa-phone text-[10px] mr-1"></i> 0988.223.344</a>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-stone-400">Bệnh Viện Đa Khoa Tỉnh Hà Giang:</div>
+                            <a href="tel:02193866115" class="font-bold text-amber-300 hover:underline"><i class="fa-solid fa-phone text-[10px] mr-1"></i> 0219.3866.115</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1746,260 +1322,174 @@
 
     </main>
 
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 text-stone-400 text-[10px] px-2 py-1.5 flex justify-around items-center">
+        <a href="#overview" class="flex flex-col items-center gap-0.5 hover:text-amber-400 transition-colors">
+            <i class="fa-solid fa-compass text-sm"></i>
+            <span>Tổng Quan</span>
+        </a>
+        <a href="#itinerary" class="flex flex-col items-center gap-0.5 hover:text-amber-400 transition-colors">
+            <i class="fa-solid fa-route text-sm"></i>
+            <span>Lịch Trình</span>
+        </a>
+        <a href="#destinations" class="flex flex-col items-center gap-0.5 hover:text-amber-400 transition-colors">
+            <i class="fa-solid fa-store text-sm"></i>
+            <span>Địa Điểm</span>
+        </a>
+        <a href="#budget" class="flex flex-col items-center gap-0.5 hover:text-amber-400 transition-colors">
+            <i class="fa-solid fa-calculator text-sm"></i>
+            <span>Ngân Sách</span>
+        </a>
+        <a href="#community-guide" class="flex flex-col items-center gap-0.5 hover:text-amber-400 transition-colors">
+            <i class="fa-solid fa-shield-halved text-sm"></i>
+            <span>Lưu Ý</span>
+        </a>
+    </nav>
+
     <!-- Footer -->
-    <footer class="bg-slate-900 text-stone-400 text-xs border-t border-slate-800 py-6 sm:py-8 mt-8 sm:mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2 sm:space-y-3">
-            <div class="flex justify-center items-center gap-2 font-bold text-white text-sm sm:text-base">
-                <i class="fa-solid fa-mountain-sun text-terracotta"></i> Hà Giang Loop 3N2Đ Guide
-            </div>
-            <p class="max-w-xl mx-auto text-stone-400 text-[11px] sm:text-xs">
-                Ứng dụng web được tối ưu giao diện Mobile-First, phục vụ tra cứu thông tin nhanh chóng trên điện thoại trong suốt hành trình.
-            </p>
-            <p class="text-stone-600 text-[10px] sm:text-[11px]">© 2026 Interactive Travel Planner • Single Page Mobile App</p>
+    <footer class="bg-slate-900 text-stone-400 text-center text-xs py-6 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 space-y-1">
+            <p class="font-semibold text-white">Cẩm Nang Du Lịch Hà Giang 3N2Đ - Biên Soạn Tối Ưu Cho Cặp Đôi</p>
+            <p class="text-[11px]">Thông tin tổng hợp từ trải nghiệm thực tế cộng đồng phượt Threads, TikTok & Facebook Groups.</p>
         </div>
     </footer>
 
-    <!-- Mobile Bottom Navigation Bar -->
-    <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-stone-200 py-1.5 px-2 shadow-lg">
-        <div class="flex justify-around items-center text-center">
-            <a href="#community-guide" onclick="setMobileNavActive(this)" class="mobile-nav-btn flex flex-col items-center p-1 text-[10px] text-stone-600 hover:text-terracotta">
-                <i class="fa-solid fa-book-bookmark text-base mb-0.5"></i>
-                <span>Cẩm Nang</span>
-            </a>
-            <a href="#itinerary" onclick="setMobileNavActive(this)" class="mobile-nav-btn mobile-nav-active flex flex-col items-center p-1 text-[10px] text-stone-600 hover:text-terracotta">
-                <i class="fa-solid fa-route text-base mb-0.5"></i>
-                <span>Lịch trình</span>
-            </a>
-            <a href="#destinations" onclick="setMobileNavActive(this)" class="mobile-nav-btn flex flex-col items-center p-1 text-[10px] text-stone-600 hover:text-terracotta">
-                <i class="fa-solid fa-location-dot text-base mb-0.5"></i>
-                <span>Địa điểm</span>
-            </a>
-            <a href="#budget" onclick="setMobileNavActive(this)" class="mobile-nav-btn flex flex-col items-center p-1 text-[10px] text-stone-600 hover:text-terracotta">
-                <i class="fa-solid fa-calculator text-base mb-0.5"></i>
-                <span>Ngân sách</span>
-            </a>
-            <a href="#safety" onclick="setMobileNavActive(this)" class="mobile-nav-btn flex flex-col items-center p-1 text-[10px] text-stone-600 hover:text-terracotta">
-                <i class="fa-solid fa-shield-halved text-base mb-0.5"></i>
-                <span>An toàn</span>
-            </a>
-        </div>
-    </nav>
-
-    <!-- JavaScript Logic & Chart Initializations -->
+    <!-- JavaScript Logic & Chart Initialization -->
     <script>
-        // Set Active State for Mobile Bottom Nav
-        function setMobileNavActive(element) {
-            document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
-                btn.classList.remove('mobile-nav-active');
-            });
-            element.classList.add('mobile-nav-active');
-        }
-
-        // Switch Day Tabs for Itinerary
+        // 1. Day Switcher Function
         function switchDay(dayId) {
             document.querySelectorAll('.day-tab').forEach(tab => {
                 tab.classList.remove('tab-active');
-                tab.classList.add('text-stone-600', 'hover:bg-stone-100');
+                tab.classList.add('text-stone-600');
             });
-            const activeTab = document.getElementById('tab-' + dayId);
-            activeTab.classList.add('tab-active');
-            activeTab.classList.remove('text-stone-600', 'hover:bg-stone-100');
-
             document.querySelectorAll('.day-content').forEach(content => {
                 content.classList.add('hidden');
             });
+
+            document.getElementById('tab-' + dayId).classList.add('tab-active');
+            document.getElementById('tab-' + dayId).classList.remove('text-stone-600');
             document.getElementById('content-' + dayId).classList.remove('hidden');
         }
 
-        // Switch Community Guide Tabs
-        function switchGuideTab(guideCategory) {
-            document.querySelectorAll('.guide-tab').forEach(tab => {
-                tab.classList.remove('guide-tab-active');
-                tab.classList.add('bg-stone-100', 'text-stone-700');
+        // 2. Directory Search & Filter Functions
+        function filterDir(category, btn) {
+            document.querySelectorAll('.dir-btn').forEach(b => {
+                b.classList.remove('active', 'bg-slate-800', 'text-white');
+                b.classList.add('bg-stone-100', 'text-stone-700');
             });
-            const activeTab = document.getElementById('gtab-' + guideCategory);
-            activeTab.classList.add('guide-tab-active');
-            activeTab.classList.remove('bg-stone-100', 'text-stone-700');
-
-            document.querySelectorAll('.guide-content-panel').forEach(panel => {
-                panel.classList.add('hidden');
-            });
-            document.getElementById('gcontent-' + guideCategory).classList.remove('hidden');
-        }
-
-        // Bike Inspection Checklist Counter
-        function updateBikeCheck() {
-            const checkedCount = document.querySelectorAll('#bikeChecklist input[type="checkbox"]:checked').length;
-            const statusEl = document.getElementById('bikeCheckStatus');
-            statusEl.innerText = checkedCount + '/5 Đã kiểm';
-            if (checkedCount === 5) {
-                statusEl.className = "text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded";
-            } else {
-                statusEl.className = "text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded";
-            }
-        }
-
-        // Switch Social Media Tabs
-        function switchSocialTab(platform) {
-            document.querySelectorAll('.social-tab').forEach(tab => {
-                tab.classList.remove('social-tab-active');
-                tab.classList.add('bg-stone-100', 'text-stone-700');
-            });
-            const activeTab = document.getElementById('stab-' + platform);
-            activeTab.classList.add('social-tab-active');
-            activeTab.classList.remove('bg-stone-100', 'text-stone-700');
-
-            document.querySelectorAll('.social-content-panel').forEach(panel => {
-                panel.classList.add('hidden');
-            });
-            document.getElementById('scontent-' + platform).classList.remove('hidden');
-        }
-
-        // Directory Filter Functionality
-        function filterDir(category, btnElement) {
-            document.querySelectorAll('.dir-btn').forEach(btn => {
-                btn.classList.remove('bg-slate-800', 'text-white');
-                btn.classList.add('bg-stone-100', 'text-stone-700');
-            });
-            if (btnElement) {
-                btnElement.classList.remove('bg-stone-100', 'text-stone-700');
-                btnElement.classList.add('bg-slate-800', 'text-white');
-            }
+            btn.classList.add('active', 'bg-slate-800', 'text-white');
+            btn.classList.remove('bg-stone-100', 'text-stone-700');
 
             const cards = document.querySelectorAll('.dir-card');
             cards.forEach(card => {
                 if (category === 'all' || card.classList.contains(category)) {
-                    card.classList.remove('hidden');
+                    card.style.display = 'block';
                 } else {
-                    card.classList.add('hidden');
+                    card.style.display = 'none';
                 }
             });
         }
 
-        // Directory Search Functionality
         function searchDir() {
             const query = document.getElementById('dirSearch').value.toLowerCase();
             const cards = document.querySelectorAll('.dir-card');
+
             cards.forEach(card => {
                 const title = card.querySelector('.font-dir-title').innerText.toLowerCase();
-                const desc = card.innerText.toLowerCase();
-                if (title.includes(query) || desc.includes(query)) {
-                    card.classList.remove('hidden');
+                const text = card.innerText.toLowerCase();
+                if (title.includes(query) || text.includes(query)) {
+                    card.style.display = 'block';
                 } else {
-                    card.classList.add('hidden');
+                    card.style.display = 'none';
                 }
             });
         }
 
-        // Dynamic Budget Calculation
+        // 3. Social Media Feed Data & Switcher
+        const socialData = {
+            threads: [
+                { user: "@phuongthao_travel", content: "Đi Lô Lô Chải đêm lạnh 18 độ chill xỉu! Đừng ai nghe lời đồn mang vali cồng kềnh nha, gom hết vào 1 balo vải chằng sau xe là nhàn nhất đời.", badge: "Kinh nghiệm Balo" },
+                { user: "@nam_ha_98", content: "Lẩu gà đen CND Đồng Văn ngon đỉnh kout! Nước hầm sâm ngọt đắng thanh thanh, ăn xong hết hẳn mỏi lưng sau ngày dài vượt dốc Bắc Sum.", badge: "Ẩm thực chuẩn vị" },
+                { user: "@minh_phuot", content: "Chèo thuyền Nho Quế nhớ book chuyến 14h chiều nắng chiếu xuống khe hẻm Tu Sản nước xanh ngọc bích đẹp như phim viễn tưởng luôn!", badge: "Check-in Nho Quế" },
+                { user: "@hoang_ha_giang", content: "Đừng dại đổ đèo mà tắt máy thả trôi côn nhé mọi người! Bắt buộc cài số 1 hoặc số 2 hãm phanh bằng động cơ mới an toàn tuyệt đối.", badge: "An toàn lái xe" }
+            ],
+            tiktok: [
+                { user: "@linh_ha_giang_loop", content: "Review chân thật xe cabin đôi Bằng Phấn: Giường nằm rộng cho 2 người, có màn che riêng tư, ngủ một mạch 6 tiếng tới bến Hà Giang tỉnh táo hẳn!", badge: "Xe Cabin VIP" },
+                { user: "@duong_m_vlog", content: "Đường Cua M Mèo Vạc lên clip TikTok triệu view siêu ảo! Nhớ dừng chân đúng góc cua rộng chụp toàn cảnh núi đá tai mèo nha.", badge: "Góc quay đẹp" },
+                { user: "@co_ba_phuot", content: "Bánh cuốn chan Bà Hà Phố cổ Đồng Văn nước hầm xương đậm đà khác hẳn bánh cuốn chấm nước mắm Hà Nội, ăn sáng bao ấm bụng.", badge: "Món ăn sáng" },
+                { user: "@ha_giang_explore", content: "Cà phê A Páo đỉnh đèo Mã Pí Lèng nghe tiếng sáo Mông giữa mây vờn vực sâu... Trải nghiệm đáng giá từng xu khi tới Hà Giang!", badge: "Trải nghiệm chill" }
+            ],
+            facebook: [
+                { user: "Hội Phượt Xe Máy Việt Nam", content: "Tuyến đường khép kín TP Hà Giang -> Quản Bạ -> Yên Minh -> Lô Lô Chải -> Đồng Văn -> Mèo Vạc -> Hà Giang là tối ưu nhất, không bị chạy lặp đường.", badge: "Lộ trình tối ưu" },
+                { user: "Review Hà Giang Tất Tần Tật", content: "Trạm 75 Cầu Mè hỗ trợ người đi phượt rất nhiệt tình, được ngủ lại trên xe cabin đến sáng và tắm rửa nước nóng miễn phí ngày về.", badge: "Trạm bến tốt" },
+                { user: "Cộng Đồng Du Lịch Hà Giang", content: "Nhớ mang theo SIM Viettel và chuẩn bị ít tiền mặt nhỏ. Nhiều điểm trên cực Bắc sóng yếu không chuyển khoản được đâu nhé các bạn.", badge: "Lưu ý di chuyển" },
+                { user: "Phượt Cặp Đôi", content: "Hai đứa mình chọn thuê 1 xe máy tự lái, tổng chi phí trọn gói 3N2Đ chỉ tầm 6.8 triệu mà trải nghiệm tự do vô cùng tuyệt vời!", badge: "Ngân sách tiết kiệm" }
+            ]
+        };
+
+        function switchSocialTab(platform) {
+            document.querySelectorAll('.social-tab').forEach(b => {
+                b.classList.remove('social-tab-active', 'bg-terracotta', 'text-white');
+                b.classList.add('bg-stone-100', 'text-stone-700');
+            });
+            const activeBtn = document.getElementById('stab-' + platform);
+            activeBtn.classList.add('social-tab-active', 'bg-terracotta', 'text-white');
+            activeBtn.classList.remove('bg-stone-100', 'text-stone-700');
+
+            const container = document.getElementById('socialContent');
+            container.innerHTML = socialData[platform].map(post => `
+                <div class="border border-stone-200 rounded-xl p-3.5 bg-stone-50/60 space-y-1.5">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-slate-800">${post.user}</span>
+                        <span class="text-[10px] bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded">${post.badge}</span>
+                    </div>
+                    <p class="text-stone-600 leading-relaxed">${post.content}</p>
+                </div>
+            `).join('');
+        }
+
+        // 4. Budget Calculator Data & Dynamic Updates
+        const budgetOptions = {
+            self: {
+                total: "6.800.000₫",
+                perPerson: "Chi phí bình quân: 3.400.000₫ / người",
+                data: [2200000, 1600000, 750000, 1850000, 400000],
+                table: [
+                    { name: "Xe Cabin Đôi Giường Nằm", detail: "550.000₫/vé/chiều x 2 người x Khứ hồi", price: "2.200.000₫" },
+                    { name: "Homestay / Khách Sạn (2 Đêm)", detail: "Lô Lô Chải (1M) + Đồng Văn (600k)", price: "1.600.000₫" },
+                    { name: "Thuê Xe Máy & Xăng Dầu", detail: "Xe số/Tay ga 200k/ngày x 3 ngày + 150k Xăng", price: "750.000₫" },
+                    { name: "Ẩm Thực & Món Ăn Đặc Sản", detail: "Lẩu gà đen, Bánh cuốn, Cháo ấu tẩu, Ăn chính 3N", price: "1.850.000₫" },
+                    { name: "Vé Tham Quan & Du Thuyền", detail: "Vé thuyền Nho Quế (300k/2ng) + Lũng Cú + Vua Mèo", price: "400.000₫" }
+                ]
+            },
+            easy: {
+                total: "8.560.000₫",
+                perPerson: "Chi phí bình quân: 4.280.000₫ / người",
+                data: [2200000, 1600000, 2510000, 1850000, 400000],
+                table: [
+                    { name: "Xe Cabin Đôi Giường Nằm", detail: "550.000₫/vé/chiều x 2 người x Khứ hồi", price: "2.200.000₫" },
+                    { name: "Homestay / Khách Sạn (2 Đêm)", detail: "Lô Lô Chải (1M) + Đồng Văn (600k)", price: "1.600.000₫" },
+                    { name: "1 Tự Lái + 1 Easy Rider", detail: "1 Xe tự lái (750k) + 1 Xế địa phương chở (1.760k)", price: "2.510.000₫" },
+                    { name: "Ẩm Thực & Món Ăn Đặc Sản", detail: "Lẩu gà đen, Bánh cuốn, Cháo ấu tẩu, Ăn chính 3N", price: "1.850.000₫" },
+                    { name: "Vé Tham Quan & Du Thuyền", detail: "Vé thuyền Nho Quế (300k/2ng) + Lũng Cú + Vua Mèo", price: "400.000₫" }
+                ]
+            }
+        };
+
         let budgetChartInstance = null;
 
-        function updateBudgetCalc() {
-            const driveOpt = document.getElementById('driveOption').value;
-            let motoCost = 740000;
-            let motoDetail = "3 ngày xe số (180k/ngày) + 200k tiền xăng phượt";
-            let total = 6800000;
-
-            if (driveOpt === 'easyrider') {
-                motoCost = 2500000;
-                motoDetail = "2 x Tài xế Easy Rider địa phương chở trọn gói (gồm xăng)";
-                total = 8560000;
-            }
-
-            document.getElementById('rowMotoCost').innerText = motoCost.toLocaleString('vi-VN') + '₫';
-            document.getElementById('rowMotoDetail').innerText = motoDetail;
-            document.getElementById('budgetTotalHeader').innerText = total.toLocaleString('vi-VN') + '₫';
-            document.getElementById('budgetTotalFooter').innerText = total.toLocaleString('vi-VN') + ' VNĐ';
-            document.getElementById('budgetPerPerson').innerText = (total / 2).toLocaleString('vi-VN') + ' VNĐ / người';
-
+        function initBudgetChart(dataArray) {
+            const ctx = document.getElementById('budgetChart').getContext('2d');
             if (budgetChartInstance) {
-                budgetChartInstance.data.datasets[0].data = [2160000, 1400000, 1100000, motoCost, 520000, 880000];
-                budgetChartInstance.update();
+                budgetChartInstance.destroy();
             }
-        }
-
-        // Chart.js Initializations
-        window.addEventListener('DOMContentLoaded', () => {
-
-            // Chart 1: Social Media Sentiment Chart
-            const ctxSentiment = document.getElementById('socialSentimentChart').getContext('2d');
-            new Chart(ctxSentiment, {
-                type: 'bar',
-                data: {
-                    labels: [
-                        'Homestay Lô Lô Chải', 
-                        'Du Thuyền Nho Quế', 
-                        'Lẩu Gà Đen CND', 
-                        'Xe Cabin Đôi VIP', 
-                        'Góc View Cafe Mí Pó',
-                        'Tự Lái 150km/Ngày'
-                    ],
-                    datasets: [{
-                        label: 'Mức Độ Yêu Thích Chân Thật (%)',
-                        data: [98, 92, 94, 96, 90, 42],
-                        backgroundColor: [
-                            'rgba(200, 90, 50, 0.85)',
-                            'rgba(2, 132, 199, 0.85)',
-                            'rgba(217, 119, 6, 0.85)',
-                            'rgba(74, 107, 93, 0.85)',
-                            'rgba(124, 58, 237, 0.85)',
-                            'rgba(225, 29, 72, 0.7)'
-                        ],
-                        borderWidth: 0,
-                        borderRadius: 6
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return ' Đánh giá tích cực thực tế: ' + context.raw + '%';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            max: 100,
-                            ticks: { callback: function(val) { return val + '%'; }, font: { size: 10 } },
-                            grid: { color: '#f1f1f0' }
-                        },
-                        y: {
-                            grid: { display: false },
-                            ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } }
-                        }
-                    }
-                }
-            });
-
-            // Chart 2: Budget Breakdown Chart
-            const ctxBudget = document.getElementById('budgetChart').getContext('2d');
-            budgetChartInstance = new Chart(ctxBudget, {
+            budgetChartInstance = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: [
-                        'Ẩm Thực (2.16Tr)', 
-                        'Lưu Trú (1.4Tr)', 
-                        'Xe Cabin (1.1Tr)', 
-                        'Xe Máy/Lái Xe', 
-                        'Tham Quan (520k)', 
-                        'Cafe/Dự Phòng'
-                    ],
+                    labels: ['Xe Cabin VIP', 'Homestay 2 Đêm', 'Phương Tiện / Easy Rider', 'Ẩm Thực 3N2Đ', 'Vé Tham Quan'],
                     datasets: [{
-                        data: [2160000, 1400000, 1100000, 740000, 520000, 880000],
-                        backgroundColor: [
-                            '#d97706',
-                            '#4a6b5d',
-                            '#c85a32',
-                            '#0284c7',
-                            '#7c3aed',
-                            '#64748b'
-                        ],
+                        data: dataArray,
+                        backgroundColor: ['#1e293b', '#c85a32', '#4a6b5d', '#d97706', '#0284c7'],
                         borderWidth: 2,
                         borderColor: '#ffffff'
                     }]
@@ -2010,74 +1500,49 @@
                     plugins: {
                         legend: {
                             position: 'bottom',
-                            labels: { boxWidth: 10, font: { family: 'Plus Jakarta Sans', size: 10 } }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const value = context.raw.toLocaleString('vi-VN') + ' VNĐ';
-                                    return ' ' + context.label.split(' ')[0] + ': ' + value;
-                                }
+                            labels: {
+                                font: { family: 'Plus Jakarta Sans', size: 10 },
+                                boxWidth: 12
                             }
                         }
-                    },
-                    cutout: '60%'
-                }
-            });
-
-            // Chart 3: Temperature Curve Chart
-            const ctxWeather = document.getElementById('weatherChart').getContext('2d');
-            new Chart(ctxWeather, {
-                type: 'line',
-                data: {
-                    labels: ['Hà Giang', 'Quản Bạ', 'Yên Minh', 'Lô Lô Chải', 'Đồng Văn', 'Mèo Vạc'],
-                    datasets: [
-                        {
-                            label: 'Ban Ngày (°C)',
-                            data: [31, 27, 26, 25, 25, 26],
-                            borderColor: '#c85a32',
-                            backgroundColor: 'rgba(200, 90, 50, 0.1)',
-                            borderWidth: 2,
-                            tension: 0.3,
-                            fill: true,
-                            pointBackgroundColor: '#c85a32'
-                        },
-                        {
-                            label: 'Ban Đêm (°C)',
-                            data: [24, 20, 19, 18, 18, 19],
-                            borderColor: '#0284c7',
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            borderDash: [4, 4],
-                            tension: 0.3,
-                            pointBackgroundColor: '#0284c7'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'top', labels: { font: { family: 'Plus Jakarta Sans', size: 10 } } },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) { return ' ' + context.dataset.label + ': ' + context.raw + '°C'; }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            min: 15,
-                            max: 35,
-                            ticks: { callback: function(val) { return val + '°C'; }, font: { size: 10 } },
-                            grid: { color: '#f1f1f0' }
-                        },
-                        x: { grid: { display: false }, ticks: { font: { size: 10 } } }
                     }
                 }
             });
+        }
 
-        });
+        function updateBudget() {
+            const mode = document.getElementById('travelMode').value;
+            const config = budgetOptions[mode];
+
+            document.getElementById('totalBudgetVal').innerText = config.total;
+            document.getElementById('budgetPerPerson').innerText = config.perPerson;
+
+            const tbody = document.getElementById('budgetTableBody');
+            tbody.innerHTML = config.table.map(row => `
+                <tr>
+                    <td class="p-2.5 font-bold text-slate-800">${row.name}</td>
+                    <td class="p-2.5 text-stone-500">${row.detail}</td>
+                    <td class="p-2.5 text-right font-bold text-stone-800">${row.price}</td>
+                </tr>
+            `).join('');
+
+            initBudgetChart(config.data);
+        }
+
+        function toggleChecklist(el) {
+            const checkbox = el.querySelector('input');
+            if (checkbox.checked) {
+                el.classList.add('line-through', 'opacity-60');
+            } else {
+                el.classList.remove('line-through', 'opacity-60');
+            }
+        }
+
+        // Initialize App State
+        window.onload = function() {
+            switchSocialTab('threads');
+            updateBudget();
+        };
     </script>
 </body>
 </html>

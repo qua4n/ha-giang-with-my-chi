@@ -131,6 +131,7 @@
                 <!-- Desktop Nav Links -->
                 <nav class="hidden lg:flex space-x-4 text-xs font-semibold uppercase tracking-wider text-stone-600">
                     <a href="#overview" class="hover:text-terracotta transition-colors">Tổng Quan</a>
+                    <a href="#route-map" class="hover:text-terracotta transition-colors">Sơ Đồ Di Chuyển</a>
                     <a href="#community-guide" class="hover:text-terracotta transition-colors">Lưu Ý Cộng Đồng</a>
                     <a href="#social" class="hover:text-terracotta transition-colors">Đánh Giá MXH</a>
                     <a href="#transport" class="hover:text-terracotta transition-colors">Xe Cabin Đôi</a>
@@ -975,6 +976,157 @@
                         <span>Trở Về TP Hà Giang</span>
                         <span class="text-[10px] text-stone-500 font-normal">Về Hà Nội</span>
                     </div>
+                </div>
+            </div>
+
+            <!-- Interactive Graphic Route Map Schematic -->
+            <div id="route-map" class="mt-6 bg-slate-900 text-white p-4 sm:p-6 rounded-2xl border border-slate-800 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div>
+                        <h3 class="text-sm sm:text-base font-bold text-amber-400 flex items-center gap-2">
+                            <i class="fa-solid fa-diagram-project"></i> Sơ Đồ Di Chuyển Chi Tiết (Loop Master Map)
+                        </h3>
+                        <p class="text-[11px] text-stone-400 mt-0.5">
+                            Bản đồ thu gọn thể hiện quãng đường (km) và điểm lưu trú qua đêm (Hành lý: Balo chằng trực tiếp sau xe).
+                        </p>
+                    </div>
+                    <span class="text-[10px] bg-amber-500/20 text-amber-300 font-semibold px-2.5 py-1 rounded-full border border-amber-500/30 self-start sm:self-auto">
+                        <i class="fa-solid fa-sync fa-spin text-[9px] mr-1"></i> Chu Trình Vòng Khép Kín
+                    </span>
+                </div>
+
+                <!-- Graphic Nodes Diagram Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                    
+                    <!-- Day 1 Card Node -->
+                    <div class="bg-slate-800/90 border border-amber-500/30 p-3.5 rounded-xl space-y-2.5 relative">
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                            <span class="font-extrabold text-amber-400 text-xs uppercase flex items-center gap-1.5">
+                                <span class="w-5 h-5 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center text-[11px]">1</span> 
+                                Ngày 1 (29/8): ~145 KM
+                            </span>
+                            <span class="text-[10px] bg-amber-950 text-amber-300 font-bold px-1.5 py-0.5 rounded border border-amber-700">Đêm 1: Lô Lô Chải</span>
+                        </div>
+                        
+                        <!-- Route Legs -->
+                        <div class="space-y-2 text-[11px] text-stone-300">
+                            <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/80 space-y-1">
+                                <div class="font-bold text-emerald-400 flex items-center gap-1">
+                                    <i class="fa-solid fa-person-biking text-[10px]"></i> Trạm 75 Cầu Mè (TP Hà Giang)
+                                </div>
+                                <p class="text-[10px] text-stone-400">→ Nhận xe máy & chằng gọn Balo cố định sau xe</p>
+                                <p class="text-[10px] text-stone-400">→ Trực tiếp xuất phát hành trình Hà Giang Loop</p>
+                            </div>
+                            
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-amber-500/50">
+                                <span>1. TP Hà Giang → Dốc Bắc Sum → Quản Bạ</span>
+                                <span class="text-amber-400 font-mono">32 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-amber-500/50">
+                                <span>2. Quản Bạ → Tráng Kìm (Phở gà) → Yên Minh</span>
+                                <span class="text-amber-400 font-mono">48 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-amber-500/50">
+                                <span>3. Yên Minh → Dốc Thẩm Mã → Thung lũng Sủng Là</span>
+                                <span class="text-amber-400 font-mono">27 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-amber-500/50">
+                                <span>4. Sủng Là → Dinh Vua Mèo → Lô Lô Chải</span>
+                                <span class="text-amber-400 font-mono">38 km</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-900/30 p-2 rounded-lg text-[10px] text-amber-200 border border-amber-700/50">
+                            <strong><i class="fa-solid fa-moon"></i> Lưu Trú Đêm 1:</strong> Nghỉ tại Nhà Trình Tường Lô Lô Chải (chỉ cần tháo balo trên xe vào phòng).
+                        </div>
+                    </div>
+
+                    <!-- Day 2 Card Node -->
+                    <div class="bg-slate-800/90 border border-sky-500/30 p-3.5 rounded-xl space-y-2.5 relative">
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                            <span class="font-extrabold text-sky-400 text-xs uppercase flex items-center gap-1.5">
+                                <span class="w-5 h-5 rounded-full bg-sky-500 text-slate-900 flex items-center justify-center text-[11px]">2</span> 
+                                Ngày 2 (30/8): ~60 KM
+                            </span>
+                            <span class="text-[10px] bg-sky-950 text-sky-300 font-bold px-1.5 py-0.5 rounded border border-sky-700">Đêm 2: Đồng Văn</span>
+                        </div>
+
+                        <!-- Route Legs -->
+                        <div class="space-y-2 text-[11px] text-stone-300">
+                            <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/80 space-y-1">
+                                <div class="font-bold text-sky-300 flex items-center gap-1">
+                                    <i class="fa-solid fa-house-user text-[10px]"></i> Check-out Lô Lô Chải → Đồng Văn
+                                </div>
+                                <p class="text-[10px] text-stone-400">→ Buộc lại Balo di chuyển 26 km về Đồng Văn</p>
+                                <p class="text-[10px] text-stone-400">→ Gửi Balo tại Homestay Đêm 2 (Thị trấn Đồng Văn)</p>
+                            </div>
+
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-sky-500/50">
+                                <span>1. Lô Lô Chải → Cột Cờ Lũng Cú</span>
+                                <span class="text-sky-400 font-mono">2 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-sky-500/50">
+                                <span>2. Lũng Cú → Phố Cổ Đồng Văn (Gửi đồ)</span>
+                                <span class="text-sky-400 font-mono">26 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-sky-500/50">
+                                <span>3. Xe không đồ: Đèo Mã Pí Lèng → Sông Nho Quế</span>
+                                <span class="text-sky-400 font-mono">18 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-sky-500/50">
+                                <span>4. Nho Quế → Quay lại Phố cổ Đồng Văn</span>
+                                <span class="text-sky-400 font-mono">14 km</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-sky-900/30 p-2 rounded-lg text-[10px] text-sky-200 border border-sky-700/50">
+                            <strong><i class="fa-solid fa-utensils"></i> Tối Đêm 2:</strong> Ăn Lẩu gà đen CND, Cháo ấu tẩu, dạo bộ Phố cổ Đồng Văn.
+                        </div>
+                    </div>
+
+                    <!-- Day 3 Card Node -->
+                    <div class="bg-slate-800/90 border border-emerald-500/30 p-3.5 rounded-xl space-y-2.5 relative">
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                            <span class="font-extrabold text-emerald-400 text-xs uppercase flex items-center gap-1.5">
+                                <span class="w-5 h-5 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center text-[11px]">3</span> 
+                                Ngày 3 (31/8): ~150 KM
+                            </span>
+                            <span class="text-[10px] bg-emerald-950 text-emerald-300 font-bold px-1.5 py-0.5 rounded border border-emerald-700">Kết Thúc Vòng Loop</span>
+                        </div>
+
+                        <!-- Route Legs -->
+                        <div class="space-y-2 text-[11px] text-stone-300">
+                            <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-700/80 space-y-1">
+                                <div class="font-bold text-emerald-300 flex items-center gap-1">
+                                    <i class="fa-solid fa-flag-checkered text-[10px]"></i> Check-out Đồng Văn → TP Hà Giang
+                                </div>
+                                <p class="text-[10px] text-stone-400">→ Mang Balo xuôi tuyến Mèo Vạc – Mậu Duệ</p>
+                                <p class="text-[10px] text-stone-400">→ Về 75 Cầu Mè trả xe, tắm rửa nước nóng miễn phí</p>
+                            </div>
+
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-emerald-500/50">
+                                <span>1. Đồng Văn → Cua M Mèo Vạc → Mậu Duệ</span>
+                                <span class="text-emerald-400 font-mono">57 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-emerald-500/50">
+                                <span>2. Mậu Duệ → Làng Lanh Lùng Tám (Quản Bạ)</span>
+                                <span class="text-emerald-400 font-mono">48 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-emerald-500/50">
+                                <span>3. Quản Bạ → Trả xe tại TP Hà Giang</span>
+                                <span class="text-emerald-400 font-mono">45 km</span>
+                            </div>
+                            <div class="flex items-center justify-between text-stone-400 pl-2 border-l-2 border-emerald-500/50">
+                                <span>4. Lên xe Cabin Đôi về lại Hà Nội (21:00)</span>
+                                <span class="text-emerald-400 font-mono">Xe đêm</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-emerald-900/30 p-2 rounded-lg text-[10px] text-emerald-200 border border-emerald-700/50">
+                            <strong><i class="fa-solid fa-shower"></i> Đặc Quyền Trạm Bến:</strong> Tắm rửa nước nóng miễn phí tại 75 Cầu Mè trước khi lên xe Cabin về Hà Nội.
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
